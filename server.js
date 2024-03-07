@@ -5,6 +5,7 @@ const session = require("express-session");
 const nocache = require("nocache");
 const path = require("path");
 const userRoute=require("./routes/userRoute");
+const {notFound , errorHandler } = require("./middleware/errorMiddleware")
 
 const app = express();
 dotenv.config({ path: ".env" });
@@ -32,6 +33,9 @@ app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 
 //routes
 app.use("/", userRoute);
+
+app.use(notFound); 
+app.use(errorHandler); 
 
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)

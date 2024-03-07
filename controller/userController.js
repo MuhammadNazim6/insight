@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const users = require('../models/userModel')
+const Users = require('../models/userModel')
 const asyncHandler = require('express-async-handler');
 const { render } = require('ejs');
 
@@ -12,29 +12,26 @@ const securepassword = asyncHandler(async (password) => {
     return passwordHash;
 })
 
-
-
-
-
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
-    const profile = req.file.filename;
-    const hashedPassword = securepassword(password)
-    const isUserExists = await users.findOne({ email });
+    // const profile = req.file.filename;
+    const hashedPassword = await securepassword(password)
+    console.log(hashedPassword);
+    const isUserExists = await Users.findOne({ email });
     if (isUserExists) {
         res.status(400)
-        throw new Error('this email is already exist');
+        throw new Error('This email already exists');
     } else {
-        const newUser = await new users({
+        const newUser = new Users({
             name,
             email,
-            hashedPassword,
-            profile,
+            password:hashedPassword,
+            // profile,
             mobile
         })
         const userDataSaved = await newUser.save()
         if (userDataSaved) {
-            res.redirect('/')
+            res.json({message:'User register successfull'})
         } else {
             throw new Error('FAILED TO SIGNUP')
         }
@@ -42,6 +39,30 @@ const registerUser = asyncHandler(async (req, res) => {
 })
 
 
+const loginUser = asyncHandler(async(req,res)=>{
+    const {email , password } = req.body;
+    const user = await Users.findOne({email})
+
+    if(await bcrypt.compare(password, user.password)){
+        req.session.user = {
+            _id:user._id,
+            email:user.email,
+            name:user.name
+        }
+        res.json({message:'User login successfull'})
+    }else{
+        res.json({message:'User login Failed'})
+    }
+})
+
+const logoutUser = asyncHandler(async(req,res)=>{
+    req.session.destroy()
+
+    res.json({message:'User logged out'})
+})
+
 module.exports = {
-    registerUser
+    registerUser,
+    loginUser,
+    logoutUser
 }
