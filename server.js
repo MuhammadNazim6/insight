@@ -4,9 +4,7 @@ const dotenv = require("dotenv");
 const session = require("express-session");
 const nocache = require("nocache");
 const path = require("path");
-const secretString = require("./config/sessionSecret");
 const userRoute=require("./routes/userRoute");
-const adminRoute=require("./routes/adminRoute");
 
 const app = express();
 dotenv.config({ path: ".env" });
@@ -17,7 +15,7 @@ app.set("view engine", "ejs");
 
 app.use(
   session({
-    secret: secretString.generateRandomString(32),
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -31,12 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/images", express.static(path.resolve(__dirname, "assets/images")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
-app.use("/libs", express.static(path.resolve(__dirname, "assets/libs")));
-app.use("/user", express.static(path.resolve(__dirname, "assets/user")));
 
 //routes
 app.use("/", userRoute);
-app.use("/admin", adminRoute);
 
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)
