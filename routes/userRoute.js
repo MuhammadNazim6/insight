@@ -1,6 +1,7 @@
 const express = require("express")
 const userController = require('../controller/userController.js')
 const visionController = require('../controller/visionController.js')
+const keepAliveController = require('../controller/keepAliveController.js')
 const userRoute = express.Router()
 const imageUpload = require("../middleware/multerMiddleware")
 
@@ -15,6 +16,8 @@ userRoute.post('/logout', userController.logoutUser)
 userRoute.post('/create-vision', visionController.createVision)
 userRoute.patch('/upvote', visionController.upvoteVision)
 userRoute.patch('/interest', visionController.interestInVision)
+
+userRoute.get('/make-connection',keepAliveController.makeConnection)
 
 
 module.exports = userRoute

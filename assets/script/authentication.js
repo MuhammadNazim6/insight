@@ -1,4 +1,3 @@
-
 //handles signup
 const handleRegister = async (e) => {
     try {
@@ -8,8 +7,6 @@ const handleRegister = async (e) => {
         const mobile = e.target.elements.mobile.value.trim();
         const password = e.target.elements.password.value.trim();
         const confirmPassword = e.target.elements.cPassword.value.trim();
-        const profile = e.target.elements.profile.files[0];
-        const formData = new FormData(e.target);
 
         const emailRegex = /^\S+@\S+\.\S+$/;
         const passwordRegex =
@@ -33,16 +30,13 @@ const handleRegister = async (e) => {
             );
         } else if (password !== confirmPassword) {
             toast("error", "Password do not match");
-        } else if (!profile) {
-            toast("error", "Add a profile image");
         } else {
-            const formData = new FormData(e.target);
-            const data = await fetchData(
-                "POST",
-                "/register",
-                formData,
-                "multipart"
-            );
+            const data = await fetchData("POST", "/register", {
+                name,
+                email,
+                password,
+                mobile,
+            });
             if (data.status === "success") {
                 location.href = "/";
             }
@@ -73,21 +67,15 @@ const handleLogin = async (e) => {
             );
         } else {
             const formData = new FormData(e.target);
-            const data = await fetchData(
-                "POST",
-                "/login",
-                {email,password},
-            );
+            const data = await fetchData("POST", "/login", { email, password });
             if (data.status === "success") {
                 location.href = "/";
             }
         }
     } catch (error) {
-        toast("error",error.message)
+        toast("error", error.message);
     }
 };
-
-
 
 document
     .querySelector("#registerForm")
