@@ -1,68 +1,67 @@
-const bcrypt = require('bcrypt')
-const Users = require('../models/userModel')
-const asyncHandler = require('express-async-handler');
-const { render } = require('ejs');
+const bcrypt = require("bcrypt");
+const User = require("../models/userModel.js");
+const asyncHandler = require("express-async-handler");
 
-// use async instead  of try catch 
-
-
+// use asyncHandler instead  of try catch
 
 const securepassword = asyncHandler(async (password) => {
     const passwordHash = await bcrypt.hash(password, 10);
     return passwordHash;
-})
+});
+
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
     // const profile = req.file.filename;
-    const hashedPassword = await securepassword(password)
-    console.log(hashedPassword);
-    const isUserExists = await Users.findOne({ email });
+    const hashedPassword = await securepassword(password);
+
+    const isUserExists = await User.findOne({ email });
     if (isUserExists) {
-        res.status(400)
-        throw new Error('This email already exists');
+        res.status(400);
+        throw new Error("This email already exists");
     } else {
-        const newUser = new Users({
+        const newUser = new User({
             name,
             email,
-            password:hashedPassword,
+            password: hashedPassword,
             // profile,
-            mobile
-        })
-        const userDataSaved = await newUser.save()
+            mobile,
+        });
+        const userDataSaved = await newUser.save();
         if (userDataSaved) {
-            res.json({message:'User register successfull'})
+            res.json({ message: "User register successfull" });
         } else {
-            throw new Error('FAILED TO SIGNUP')
+            throw new Error("FAILED TO SIGNUP");
         }
     }
-})
+});
 
 
-const loginUser = asyncHandler(async(req,res)=>{
-    const {email , password } = req.body;
-    const user = await Users.findOne({email})
+const loginUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
 
-    if(await bcrypt.compare(password, user.password)){
-        req.session.user = {
-            _id:user._id,
-            email:user.email,
-            name:user.name
-        }
-        res.json({message:'User login successfull'})
-    }else{
-        res.json({message:'User login Failed'})
+    if (await bcrypt.compare(password, user.password)) {
+        req.session.userId = user._id,
+
+            res.json({ message: "User login successfull" });
+    } else {
+        res.json({ message: "User login Failed" });
     }
-})
+});
 
-const logoutUser = asyncHandler(async(req,res)=>{
-    req.session.destroy()
 
-    res.json({message:'User logged out'})
-})
+const logoutUser = asyncHandler(async (req, res) => {
+    req.session.destroy();
+
+    res.json({ message: "User logged out" });
+});
+
+
+
 
 module.exports = {
     registerUser,
     loginUser,
-    logoutUser
-}
+    logoutUser,
+};
