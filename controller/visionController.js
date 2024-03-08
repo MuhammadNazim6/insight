@@ -173,19 +173,28 @@ const addComment = asyncHandler(async (req, res) => {
     throw new Error('Failed to add comment')
   }
 
-
-  const deleteVision = asyncHandler(async (req, res) => {
-    const { visionId } = req.body;
-    
-  })
-
-
-
 });
+
+
+const deleteVision = asyncHandler(async (req, res) => {
+  const { visionId } = req.body;
+  console.log(visionId);
+  const deletedVision = await Vision.findByIdAndDelete(visionId)
+  if(deletedVision){
+    res.status(204).json({
+      status:'success',
+      message:'Deleted vision succesfully'
+    })
+  }else{
+    throw new Error('Unable to delete vision')
+  }
+})
 
 module.exports = {
   createVision,
   upvoteVision,
   interestInVision,
-  addComment
+  addComment,
+  deleteVision,
+  
 };
