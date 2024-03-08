@@ -12,11 +12,15 @@ const securepassword = asyncHandler(async (password) => {
     return passwordHash;
 })
 
+const showRegister = asyncHandler(async (req,res)=>{
+    res.render('user/signup')
+})
+
+
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
-    // const profile = req.file.filename;
+    const profile = req.file.filename;
     const hashedPassword = await securepassword(password)
-    console.log(hashedPassword);
     const isUserExists = await Users.findOne({ email });
     if (isUserExists) {
         res.status(400)
@@ -26,7 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
             name,
             email,
             password:hashedPassword,
-            // profile,
+            profile,
             mobile
         })
         const userDataSaved = await newUser.save()
@@ -43,16 +47,24 @@ const loginUser = asyncHandler(async(req,res)=>{
     const {email , password } = req.body;
     const user = await Users.findOne({email})
 
-    if(await bcrypt.compare(password, user.password)){
-        req.session.user = {
-            _id:user._id,
-            email:user.email,
-            name:user.name
+    if(user){
+        if(await bcrypt.compare(password, user.password)){
+            req.session.user = {
+                _id:user._id,
+                email:user.email,
+                name:user.name
+            }
+            res.json({status:"success",message:'User login successfull'})
+        }else{
+            res.status=401
+            throw new Error('Email or Password is incorrect')
         }
-        res.json({message:'User login successfull'})
     }else{
-        res.json({message:'User login Failed'})
+        res.status=401
+        throw new Error('Email or Password is incorrect')
     }
+
+    
 })
 
 const logoutUser = asyncHandler(async(req,res)=>{
@@ -62,6 +74,7 @@ const logoutUser = asyncHandler(async(req,res)=>{
 })
 
 module.exports = {
+    showRegister,
     registerUser,
     loginUser,
     logoutUser
