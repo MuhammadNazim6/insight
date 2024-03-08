@@ -1,6 +1,7 @@
 const express = require("express")
 const userController = require('../controller/userController.js')
 const visionController = require('../controller/visionController.js')
+const keepAliveController = require('../controller/keepAliveController.js')
 const userRoute = express.Router()
 const imageUpload = require("../middleware/multerMiddleware")
 
@@ -14,6 +15,8 @@ userRoute.post('/login', userController.loginUser)
 userRoute.post('/logout', userController.logoutUser)
 userRoute.post('/create-vision', visionController.createVision)
 userRoute.post('/upvote', visionController.upvoteVision)
+
+userRoute.get('/make-connection',keepAliveController.makeConnection)
 
 
 module.exports = userRoute
