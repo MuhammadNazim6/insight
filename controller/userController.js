@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
     const profile = req.file.filename;
     const hashedPassword = await securepassword(password)
-    const isUserExists = await Users.findOne({ email });
+    const isUserExists = await User.findOne({ email });
     if (isUserExists) {
         res.status(400);
         throw new Error("This email already exists");
@@ -32,6 +32,7 @@ const registerUser = asyncHandler(async (req, res) => {
         })
         const userDataSaved = await newUser.save()
         if (userDataSaved) {
+            req.session.userId = userDataSaved._id
             res.json({ message: "User register successfull" });
         } else {
             throw new Error("FAILED TO SIGNUP");
@@ -42,22 +43,19 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
+    
     const user = await User.findOne({ email });
 
     if(user){
         if(await bcrypt.compare(password, user.password)){
-            req.session.user = {
-                _id:user._id,
-                email:user.email,
-                name:user.name
-            }
+            req.session.userId = user._id
             res.json({status:"success",message:'User login successfull'})
         }else{
-            res.status=401
+            res.status(401)
             throw new Error('Email or Password is incorrect')
         }
     }else{
-        res.status=401
+        res.status(401)
         throw new Error('Email or Password is incorrect')
     }
 

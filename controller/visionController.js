@@ -21,10 +21,11 @@ const createVision = asyncHandler(async (req, res) => {
 });
 
 
+
+
 const upvoteVision = asyncHandler(async (req, res) => {
   const userId = req.session.userId
   const { visionId } = req.body;
-  console.log(userId);
   if(!userId){
       return res.json({message:'Not a valid userId'})
   }
@@ -39,27 +40,32 @@ const upvoteVision = asyncHandler(async (req, res) => {
       const removedUpvote = await Vision.findByIdAndUpdate(
           visionId,
           { $pull: { upvotes: { userId } } },
+          {new : true }
       )
 
       if (removedUpvote) {
-          res.json({ status: 'success', message: 'Upvote Removed' })
+          res.json({ status: 'success', message: 'Upvote Removed' , count:removedUpvote.upvotes.length})
       } else {
           res.json({ status: 'failed', message: 'Unable to remove upvote' })
       }
 
   } else {
       //to add upvote
-      const updatedVision = await Vision.findByIdAndUpdate(
+      const addedUpvote = await Vision.findByIdAndUpdate(
           visionId,
           { $push: { upvotes: { userId } } },
           { new: true }
       );
-      if(updatedVision){
-          res.json({ status: 'success', message:'Upvote Added' })
+      if(addedUpvote){
+          res.json({ status: 'success', message:'Upvote Added' , count:addedUpvote.upvotes.length })
       }else{
           res.json({ status: 'failed', message:'Unable to add upvote'})
       }
   }
+})
+
+const interestInVision = asyncHandler(async(req,res)=>{
+
 })
 
 module.exports = {
