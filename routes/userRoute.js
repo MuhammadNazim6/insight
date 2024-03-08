@@ -7,13 +7,14 @@ const imageUpload = require("../middleware/multerMiddleware")
 
 userRoute.get('/',userController.showHome)
 userRoute.get('/register',userController.showRegister)
-userRoute.post('/register',imageUpload,userController.registerUser)
+userRoute.post('/register',userController.registerUser)
 
 userRoute.get('/login',userController.showLogin)
 userRoute.post('/login', userController.loginUser)
 userRoute.post('/logout', userController.logoutUser)
 userRoute.post('/create-vision', visionController.createVision)
-userRoute.post('/upvote', visionController.upvoteVision)
+userRoute.patch('/upvote', visionController.upvoteVision)
+userRoute.patch('/interest', visionController.interestInVision)
 
 
 module.exports = userRoute

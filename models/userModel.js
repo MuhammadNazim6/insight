@@ -15,10 +15,9 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-    // profile: {
-    //   type: String,
-    //   required: true,
-    // },
+    profile: {
+      type: String,
+    },
   password: {
     type: String,
     required: true,
@@ -26,6 +25,22 @@ const userSchema = new mongoose.Schema({
   isOnline:{
     type:Boolean,
   },
+  notifications:[
+    {
+      userId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+      visionId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Vision",
+      },
+      isRead:{
+        type:Boolean,
+        default: false
+      },
+    }
+  ]
   
 });
 

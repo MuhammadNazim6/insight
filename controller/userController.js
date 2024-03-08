@@ -21,7 +21,7 @@ const showRegister = asyncHandler(async (req,res)=>{
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
-    const profile = req.file.filename;
+    // const profile = req.file.filename;
     const hashedPassword = await securepassword(password)
     const isUserExists = await User.findOne({ email });
     if (isUserExists) {
@@ -32,7 +32,7 @@ const registerUser = asyncHandler(async (req, res) => {
             name,
             email,
             password:hashedPassword,
-            profile,
+            // profile,
             mobile
         })
         const userDataSaved = await newUser.save()
@@ -54,10 +54,11 @@ const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     
     const user = await User.findOne({ email });
-    console.log(req.body,user)
+    
     if(user){
         if(await bcrypt.compare(password, user.password)){
             req.session.userId = user._id
+            console.log(user.name,'Logged in')
             res.json({status:"success",message:'User login successfull'})
         }else{
             res.status(401)
