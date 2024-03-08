@@ -72,6 +72,41 @@ const loginUser = asyncHandler(async (req, res) => {
     
 })
 
+
+const updateProfile = asyncHandler(async(req,res)=>{
+
+    const profile = req?.file?.filename;
+
+    const user = await User.findById(req.session.userId)
+    if(user){
+        user.name = req.body.name ||  user.name
+        user.email = req.body.email ||  user.email
+        user.mobile = req.body.mobile || user.mobile
+        if(profile){
+            user.profile = profile
+        }
+
+        if(req.body.password){
+            const hashedPassword = await securepassword(req.body.password)
+            user.password = hashedPassword
+        }
+        const updatedUser = await user.save();
+        if(updatedUser){
+            res.status(200).json({
+                status:'success',
+                message:"Porfile updated successfully"
+            })
+        }
+        
+    }else{
+        throw new Error('No user found')
+    }
+
+
+    
+
+})
+
 const logoutUser = asyncHandler(async (req, res) => {
     req.session.destroy();
 
@@ -88,4 +123,5 @@ module.exports = {
     showLogin,
     loginUser,
     logoutUser,
+    updateProfile
 };

@@ -22,8 +22,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  isOnline:{
-    type:Boolean,
+  bio:{
+    type:String,
   },
   notifications:[
     {

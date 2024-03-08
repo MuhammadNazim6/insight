@@ -16,6 +16,8 @@ userRoute.post('/logout', userController.logoutUser)
 userRoute.post('/create-vision', visionController.createVision)
 userRoute.patch('/upvote', visionController.upvoteVision)
 userRoute.patch('/interest', visionController.interestInVision)
+userRoute.patch('/comment',visionController.addComment)
+userRoute.put('/profile',userController.updateProfile)
 
 userRoute.get('/make-connection',keepAliveController.makeConnection)
 

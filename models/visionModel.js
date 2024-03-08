@@ -41,6 +41,10 @@ const visionSchema = new mongoose.Schema({
       comment: {
         type: String,
       },
+      updatedAt:{
+        type: Date,
+        default: new Date(),
+      }
     }
   ],
   createdAt: {
