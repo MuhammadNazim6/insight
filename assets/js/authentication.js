@@ -1,3 +1,5 @@
+
+//handles signup
 const handleRegister = async (e) => {
     try {
         e.preventDefault();
@@ -35,39 +37,59 @@ const handleRegister = async (e) => {
             toast("error", "Add a profile image");
         } else {
             const formData = new FormData(e.target);
-            const data = await fetchData("POST",'/register',formData,"multipart");
+            const data = await fetchData(
+                "POST",
+                "/register",
+                formData,
+                "multipart"
+            );
+            if (data.status === "success") {
+                location.href = "/";
+            }
         }
     } catch (error) {
-        toast("error",error.message)
+        toast("error", error.message);
         console.log(error);
     }
 };
+
+//handles login
 const handleLogin = async (e) => {
     try {
         e.preventDefault();
-        
-    } catch (error) {}
-};
-const toast = (type, message) => {
-    const color =
-        type === "success"
-            ? "linear-gradient(to right, #00b09b, #96c93d)"
-            : "linear-gradient(90deg, rgba(215,24,40,1) 0%, rgba(158,55,50,1) 100%)";
-    Toastify({
-        text: message,
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: color,
-        },
-    }).showToast();
+        const email = e.target.elements.email.value.trim();
+        const password = e.target.elements.password.value.trim();
+        const emailRegex = /^\S+@\S+\.\S+$/;
+        const passwordRegex =
+            /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[a-zA-Z0-9]).{6,}$/;
+        if (!email || !password) {
+            toast("error", "All fields should be filled");
+        } else if (!email.match(emailRegex)) {
+            toast("error", "Invalid email address");
+        } else if (!password.match(passwordRegex)) {
+            toast(
+                "error",
+                "Password must be at least 6 characters and contain at least one special character"
+            );
+        } else {
+            const formData = new FormData(e.target);
+            const data = await fetchData(
+                "POST",
+                "/login",
+                {email,password},
+            );
+            if (data.status === "success") {
+                location.href = "/";
+            }
+        }
+    } catch (error) {
+        toast("error",error.message)
+    }
 };
 
 
 
 document
     .querySelector("#registerForm")
-    .addEventListener("submit", handleRegister);
+    ?.addEventListener("submit", handleRegister);
+document.querySelector("#loginForm")?.addEventListener("submit", handleLogin);

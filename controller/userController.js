@@ -4,9 +4,14 @@ const asyncHandler = require("express-async-handler");
 
 // use asyncHandler instead  of try catch
 
+
 const securepassword = asyncHandler(async (password) => {
     const passwordHash = await bcrypt.hash(password, 10);
     return passwordHash;
+})
+
+const showHome = asyncHandler(async (req,res)=>{
+    res.render('user/home')
 })
 
 const showRegister = asyncHandler(async (req,res)=>{
@@ -18,7 +23,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
     const profile = req.file.filename;
     const hashedPassword = await securepassword(password)
-    const isUserExists = await Users.findOne({ email });
+    const isUserExists = await User.findOne({ email });
     if (isUserExists) {
         res.status(400);
         throw new Error("This email already exists");
@@ -32,18 +37,22 @@ const registerUser = asyncHandler(async (req, res) => {
         })
         const userDataSaved = await newUser.save()
         if (userDataSaved) {
-            res.json({ message: "User register successfull" });
+            res.json({status:"success",message: "User register successfull" });
         } else {
             throw new Error("FAILED TO SIGNUP");
         }
     }
 });
 
+const showLogin = asyncHandler(async(req,res)=>{
+    res.render('user/login')
+})
+
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-
+    console.log(req.body,user)
     if(user){
         if(await bcrypt.compare(password, user.password)){
             req.session.user = {
@@ -53,11 +62,11 @@ const loginUser = asyncHandler(async (req, res) => {
             }
             res.json({status:"success",message:'User login successfull'})
         }else{
-            res.status=401
+            res.status(401)
             throw new Error('Email or Password is incorrect')
         }
     }else{
-        res.status=401
+        res.status(401)
         throw new Error('Email or Password is incorrect')
     }
 
@@ -74,8 +83,10 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 
 module.exports = {
+    showHome,
     showRegister,
     registerUser,
+    showLogin,
     loginUser,
     logoutUser,
 };
