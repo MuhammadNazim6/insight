@@ -59,7 +59,7 @@ const loginUser = asyncHandler(async (req, res) => {
                 _id:user._id,
                 email:user.email,
                 name:user.name
-            }
+            } 
             res.json({status:"success",message:'User login successfull'})
         }else{
             res.status(401)
