@@ -23,6 +23,7 @@ const showRegister = asyncHandler(async (req, res) => {
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
     // const profile = req.file.filename;
+    const profile = 'initialProfile.jpg'
     const hashedPassword = await securepassword(password)
     const isUserExists = await User.findOne({ email });
     if (isUserExists) {
@@ -33,7 +34,7 @@ const registerUser = asyncHandler(async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            // profile,
+            profile,
             mobile
         })
         const userDataSaved = await newUser.save()

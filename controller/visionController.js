@@ -141,7 +141,9 @@ const interestInVision = asyncHandler(async (req, res) => {
         message: "Interest Added",
         count: addedInterest.interested.length,
       });
-      await sendInterestNotification(addedInterest.userId,{type:"notification",message:"Someone showed interest in your idea"})
+      const user = await User.findById(userId)
+      
+      await sendInterestNotification(addedInterest.userId,{type:"notification",message:`${user.name} showed interest in your idea`})
     } else {
       res.json({ status: "failed", message: "Unable to add interest" });
     }
@@ -203,7 +205,6 @@ const editVision = asyncHandler(async (req, res) => {
     res.status(200).json({status:'success',message:'Vision edited successfully'})
   }
 })
-
 
 
 

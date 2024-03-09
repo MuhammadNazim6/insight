@@ -69,3 +69,9 @@ document
 document.querySelector(`[data-delete-vision]`)?.forEach((item) => {
     item.addEventListener("click", deleteVision);
 });
+
+
+// Handle profile edit
+const handleProfileEdit = async (image,name,mobile,bio)=>{
+    // sabith do tthis
+}
