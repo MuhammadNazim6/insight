@@ -38,7 +38,7 @@ const registerUser = asyncHandler(async (req, res) => {
         const userDataSaved = await newUser.save()
         if (userDataSaved) {
             req.session.userId = userDataSaved._id
-            res.json({ message: "User register successfull" });
+            res.json({status:"success", message: "User register successfull" });
         } else {
             throw new Error("FAILED TO SIGNUP");
         }
