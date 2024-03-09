@@ -12,7 +12,7 @@
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
-  <title>About</title>
+  <title>Pitch</title>
   <link rel="stylesheet" href="css/theme.min.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -75,7 +75,7 @@
 
   <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
     <div class="container">
-      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
           viewBox="0 0 16 16">
           <path
@@ -88,27 +88,28 @@
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
         <li class="nav-item">
-          <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+          <a class="nav-link fs-5" href="/" aria-label="Homepage">
             Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="content.html" aria-label="A sample content page">
-            Feed
+          <a class="nav-link fs-5" href="/pitch" aria-label="A sample content page">
+            Pitch
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-            About us
+          <a class="nav-link fs-5" href="/account" aria-label="A system message page">
+            Account
           </a>
         </li>
+      </ul>
     </div>
   </nav>
 
   <main>
     <div class="container">
       <div class="row d-flex justify-content-center py-vh-5 pb-0">
-        <div class="col-12 col-lg-10 col-xl-8">
+        <!-- <div class="col-12 col-lg-10 col-xl-8">
           <div class="row">
             <div class="col-12">
               <h1 class="display-1 fw-bold">Example
@@ -127,11 +128,10 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-12 py-vh-2">
-
-
+            <!-- 
             <div class="chatbox bg-lights " id="chatbox">
               <div class="chats">
 
@@ -152,14 +152,14 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
 
-
-            <!-- <img src="img/webp/abstract18.webp" width="1446" height="982" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-up"> -->
+            <!-- <img src="img/webp/abstract18.webp" width="1446" height="982" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-up"> -->
           </div>
         </div>
         <div class="col-12 col-lg-10 col-xl-8">
-          <div class="row d-flex align-items-start" data-aos="fade-right">
+          <!-- <div class="row d-flex align-items-start" data-aos="fade-right">
             <div class="col-12 col-lg-7">
               <h2 class="h3 mt-5 border-top pt-5">01. Dolor istam est</h2>
               <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
@@ -178,8 +178,8 @@
                 amet
               </p>
             </div>
-          </div>
-
+          </div> -->
+          
           <div class="row d-flex align-items-start" data-aos="fade-right">
             <div class="col-12 col-lg-7">
               <h2 class="h3 mt-5 border-top pt-5">02. Lorem ipsum</h2>
@@ -268,8 +268,8 @@
           </div>
 
 
-        </div> -->
-       </div>
+        </div>
+      </div>
       <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
         <div class="col-12 col-lg-10 col-xl-9">
           <div class="p-5 small bg-gray-900">
@@ -294,6 +294,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     AOS.init({
       duration: 800, // values from 0 to 3000, with step 50ms
