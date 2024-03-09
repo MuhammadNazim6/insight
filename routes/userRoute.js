@@ -18,7 +18,9 @@ userRoute.patch('/upvote', visionController.upvoteVision)
 userRoute.patch('/interest', visionController.interestInVision)
 userRoute.patch('/comment',visionController.addComment)
 userRoute.put('/profile',userController.updateProfile)
-userRoute.delete('/delete',visionController.deleteVision)
+userRoute.delete('/delete-vision',visionController.deleteVision)
+userRoute.delete('/delete-comment',visionController.deleteComment)
+userRoute.put('/edit-vision',visionController.editVision)
 
 userRoute.get('/make-connection',keepAliveController.makeConnection)
 

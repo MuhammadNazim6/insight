@@ -110,7 +110,7 @@ const updateProfile = asyncHandler(async(req,res)=>{
 const logoutUser = asyncHandler(async (req, res) => {
     req.session.destroy();
 
-    res.json({ message: "User logged out" });
+    res.json({status:'success', message: "User logged out" });
 });
 
 

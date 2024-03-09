@@ -178,17 +178,51 @@ const addComment = asyncHandler(async (req, res) => {
 
 const deleteVision = asyncHandler(async (req, res) => {
   const { visionId } = req.body;
-  console.log(visionId);
   const deletedVision = await Vision.findByIdAndDelete(visionId)
-  if(deletedVision){
+  if (deletedVision) {
     res.status(204).json({
-      status:'success',
-      message:'Deleted vision succesfully'
+      status: 'success',
+      message: 'Deleted vision succesfully'
     })
-  }else{
+  } else {
     throw new Error('Unable to delete vision')
   }
 })
+
+
+const editVision = asyncHandler(async (req, res) => {
+  const { visionId , title , content} = req.body;
+  const vision = await Vision.findById(visionId)
+  vision.title = title || vision.title
+  vision.content = content || vision.content
+
+  const editedVision = await vision.save()
+  if(editedVision){
+    res.status(200).json({status:'success',message:'Vision edited successfully'})
+  }
+})
+
+
+
+
+const deleteComment = asyncHandler(async (req, res) => {
+  const { visionId, commentId } = req.body;
+  const vision = await Vision.findById(visionId)
+
+  vision.comments = vision.comments.filter((comment) => !comment._id.equals(commentId))
+  const commentDeleted = await vision.save()
+
+  if (commentDeleted) {
+    res.status(200).json({ status: 'success', message: 'Comment deleted successfully' })
+  } else {
+    res.status(400).json({ status: 'failed', message: 'Unable to delete comment at this instance' })
+  }
+})
+
+
+
+
+
 
 module.exports = {
   createVision,
@@ -196,5 +230,7 @@ module.exports = {
   interestInVision,
   addComment,
   deleteVision,
-  
+  deleteComment,
+  editVision
+
 };
