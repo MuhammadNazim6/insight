@@ -47,14 +47,10 @@ body {
     box-shadow: 0 0 2px 0 rgba(185, 185, 185, 0.1);
     margin-bottom: 24px;
 }
-.container{
-    position: absolute;
-    left: 50px  ;
-}
 
-.custom-dropdown .dropdown-toggle::after {
-    display: none; /* Hide the default arrow icon */
-  }
+.main-content{
+padding-top: 80px;
+}
 
 .card {
     position: relative;
