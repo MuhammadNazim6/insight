@@ -210,20 +210,57 @@
                         </div>
                         <div class="mt-3">
                             <p class="text-muted font-13 mb-3">
-                                Hi I'm Johnathn Deo,has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type.
+                                <%= visions[0].title %>
+                                    <%= visions[0].interested[0].userId.name %>
                             </p>
-                            <p class="text-muted mb-2 font-13"><strong>Name :</strong> <span class="ms-2">Geneva D.
-                                    McKnight</span></p>
-                            <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">(123) 123
-                                    1234</span></p>
-                            <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2"><a
-                                        href="/cdn-cgi/l/email-protection" class="_cf_email_"
-                                        data-cfemail="4431372136042129252d286a202b29252d2a">[email&#160;protected]</a></span>
+                            <p class="text-muted mb-2 font-13"><strong>Name :</strong> <span class="ms-2">
+                                    <%= user.name %>
+                                </span></p>
+                            <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">
+                                    <%= user.mobile %>
+                                </span></p>
+                            <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">
+                                    <%= user.email %>
+                                </span>
                             </p>
                         </div>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <h4 class="header-title mb-3">Interested Members <i class="mdi mdi-account-multiple ms-1"></i>
+                        </h4>
+                        <div class="list-group">
+
+                            <div class="scrollable-list">
+                                <% for (let i=0; i < visions.length; i++) { %>
+                                <% for (let j=0; j < visions[i].interested.length; j++) { %>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                    class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
+                                                    alt>
+                                               <div>
+                                                <h6 class="mb-1 font-11">
+                                                    <%= visions[i].interested[j].userId.name %>
+                                                </h5>
+                                                <h5 class="mb-0 font-13 text-muted">
+                                                    <%= visions[i].title %>
+                                                </h5>
+                                               </div>
+                                            </div>
+                                        </a>
+                                        <% } %>
+                                        <% } %>
+                            </div>
+
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title mb-3">Inbox</h4>
@@ -364,64 +401,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="dropdown float-end">
-                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-
-                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-
-                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-
-                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-
-                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                            </div>
-                        </div>
-                        <h4 class="header-title mb-3">Interested Members <i class="mdi mdi-account-multiple ms-1"></i>
-                        </h4>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt>
-                                    <div class="w-100 ms-2">
-                                        <h5 class="mb-1">/title of pitch/</h5>
-                                        <p class="mb-0 font-13 text-muted">/name of user/</p>
-                                    </div>
-                                    <i class="mdi mdi-chevron-right h2"></i>
-                                </div>
-                            </a>
-                            <!-- <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png"
-                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt>
-                                    <div class="w-100 ms-2">
-                                        <h5 class="mb-1">Adam Barney</h5>
-                                        <p class="mb-0 font-13 text-muted">PHP Developer</p>
-                                    </div>
-                                    <i class="mdi mdi-chevron-right h2"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt>
-                                    <div class="w-100 ms-2">
-                                        <h5 class="mb-1">Michal Chang</h5>
-                                        <p class="mb-0 font-13 text-muted">UI/UX Designer</p>
-                                    </div>
-                                    <i class="mdi mdi-chevron-right h2"></i>
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <div class="col-xl-7">
                 <div class="card">

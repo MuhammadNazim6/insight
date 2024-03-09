@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/userModel.js");
+const Vision = require("../models/visionModel.js");
 const asyncHandler = require("express-async-handler");
 
 // use asyncHandler instead  of try catch
@@ -120,7 +121,14 @@ const showPitchPage = asyncHandler(async (req, res) => {
 
 
 const showAccountPage = asyncHandler(async (req, res) => {
-    res.render('user/account')
+    const user = await User.findOne({_id:req.session.userId})
+    const visions = await Vision.find({userId:req.session.userId})
+    .populate('interested.userId')
+    .exec()
+
+    console.log(visions);
+    console.log(user);
+    res.render('user/account',{user , visions })
 })
 
 module.exports = {

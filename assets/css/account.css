@@ -33,3 +33,8 @@ button:active {
     font-size: medium;
     font-weight: bolder;
 }
+
+.scrollable-list {
+    max-height: 300px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scroll if the content overflows */
+  }
