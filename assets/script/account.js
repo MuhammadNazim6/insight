@@ -13,7 +13,7 @@ const handleVisionSubmit = async (title, content) => {
         });
         if (data.status === "success") {
             toast("success", data.message);
-            return true
+            return true;
             //add vision to DOM
         }
     } catch (error) {
@@ -63,15 +63,34 @@ const addVisionToDOM = () => {
     //code to add new vision
 };
 
+const handleProfileEdit = async (profile, name, mobile, bio) => {
+    try {
+        if (!name || !mobile || !bio) {
+            toast("error", "All fields should be filled");
+            return false;
+        }
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("mobile", mobile);
+        formData.append("bio", bio);
+        formData.append("profile", profile);
+        const data = await fetchData("PUT", "/profile", formData, "multipart");
+        if (data.status === "success") {
+            toast("success", data.message);
+            //nazim update ui
+            //
+            //
+            return true;
+        }
+    } catch (error) {
+        toast("error", "All fields should be filled");
+        return false;
+    }
+};
+
 document
     .querySelector("#editVisionForm")
     ?.addEventListener("click", handleEditVision);
 document.querySelector(`[data-delete-vision]`)?.forEach((item) => {
     item.addEventListener("click", deleteVision);
 });
-
-
-// Handle profile edit
-const handleProfileEdit = async (image,name,mobile,bio)=>{
-    // sabith do tthis
-}

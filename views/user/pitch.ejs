@@ -288,7 +288,7 @@
                                     <!-- Add more comments as needed -->
                                 </div>
 
-                                <form class="comment-form mt-4 comment-div">
+                                <form class="comment-form mt-4 comment-div" method="post" id="addCommentForm" action="">
                                     <div class="d-flex align-items-start mt-2">
                                         <a class="pe-2" href="#">
                                             <img
@@ -311,7 +311,9 @@
                                                     border-radius: 35px;
                                                     font-size: 12px;
                                                 "
+                                                name="comment"
                                             />
+                                            <input type="hidden" name="visionId" value="<%= visions[i]._id %>">
                                             <button type="submit" class="btn-comment"><i class="fa-regular fa-paper-plane"></i></button>
                                         </div>
                                     </div>
@@ -350,8 +352,6 @@
                 } else {
                     remove_class_on_scroll();
                 }
-
-                console.log(scrollpos);
             });
         </script>
         <script
