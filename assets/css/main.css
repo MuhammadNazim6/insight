@@ -1,0 +1,80 @@
+/* utils */
+
+.pointer {
+    cursor: pointer;
+}
+.fa-solid {
+    color: rgb(193, 168, 9);
+}
+.hide {
+    /* display: none; */
+}
+.btn-comment {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 34px;
+    width: 50px;
+    border-radius: 0 35px 35px 0;
+    background-color: black;
+    border: none;
+    padding: auto;
+}
+.btn-comment:hover {
+    background-color: #1b1a1a;
+    transition: all ease-in 0.2s;
+}
+.fa-paper-plane {
+    /* color: rgb(193, 168, 9); */
+    color: rgb(255, 255, 255);
+
+    margin-right: 10px;
+    transition: all ease-in 0.2s;
+}
+.btn-comment:hover .fa-paper-plane {
+    /* color: rgb(255, 255, 255); */
+    color: rgb(193, 168, 9);
+}
+/* utils */
+
+.comment-section {
+    position: relative;
+    padding-right: 0;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.existing-comments {
+    max-height: 300px;
+    min-height: 100px;
+    overflow-y: auto;
+    padding: 20px;
+    padding-right: 0;
+}
+.comment-div {
+    position: absolute;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 35px;
+    width: 80%;
+}
+.comment-user {
+    font-size: 12px;
+}
+.comment {
+    margin-top: 10px;
+}
+::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(44, 44, 44); /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid rgb(44, 44, 44); /* creates padding around scroll thumb */
+}
