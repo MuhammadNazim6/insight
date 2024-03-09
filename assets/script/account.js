@@ -80,7 +80,6 @@ const handleProfileEdit = async (profile, name, mobile, bio) => {
             document.getElementById('bioPara').textContent = data.userData.bio
             document.getElementById('mobilePara').textContent = data.userData.mobile
             document.getElementById('profileImg').src = data.userData.profile
-            console.log(data.userData);
             return true;
         }
     } catch (error) {

@@ -73,38 +73,40 @@
                                 <img src="/img/three-dots-vertical.svg" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a id="edit-profile-button" href="javascript:void(0);" class="dropdown-item"
-                                    onclick="openEditProfileModal('<%= user.name %>', '<%= user.mobile %>' , '<%= user.profile %>' ,'<%= user.bio %>' )">Edit</a>
-
+                                <a id="edit-profile-button" href="javascript:void(0);" class="dropdown-item" onclick="openEditProfileModal('<%= user.name %>', '<%= user.mobile %>' , '<%= user.profile %>' ,'<%= user.bio %>' )">Edit</a>
+                                
                                 <!-- Add more dropdown items as needed -->
                             </div>
                         </div>
                         <div class="d-flex align-items-start">
                             <!-- Add space for profile image -->
-                            <img src="<%= user.profile %>" class="rounded-circle avatar-lg img-thumbnail"
-                                alt="profile-image">
+                            <div>
+                                <img id="profileImg" src="<%= user.profile %>"
+                                    class="" style="height: 100px; width: 100px; border-radius: 50px;" alt="profile-image">
+                            </div>
                             <div class="w-100 ms-3">
-                                <h4 class="my-0">
-                                    <%= user.name %>
-                                </h4>
+                                <h4 class="my-0"><%= user.name %></h4>
                             </div>
                         </div>
                         <div class="mt-3">
-                            <p class="text-muted font-13 mb-3">
-                            </p>
-                            <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">
+                            <p class="text-muted mb-2 font-13"><strong>Bio :</strong><span id="bioPara" class="ms-2">
+                                    <%= user.bio %>
+                                </span></p>
+                            <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span  id="mobilePara" class="ms-2">
                                     <%= user.mobile %>
                                 </span></p>
-                            <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">
+                            <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span id="emailPara" class="ms-2">
                                     <%= user.email %>
                                 </span>
                             </p>
-                            <p class="text-muted mb-2 font-13"><strong>Total Visions :</strong> <span class="ms-2">
+                            <p class="text-muted mb-2 font-13"><strong>Total Visions :</strong> <span id="visionCountPara" class="ms-2">
                                     <%= visions.length %>
                                 </span>
                             </p>
                         </div>
                     </div>
+
+
                 </div>
                 <div class="card">
                     <div class="card-body">
