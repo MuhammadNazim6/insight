@@ -127,7 +127,7 @@
                         <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
                            <div class="d-flex align-items-center">
                               <div class="mr-3">
-                                 <i class="fa-regular fa-thumbs-up"></i>
+                                 <i class="<%= visions[i].upvotes.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-thumbs-up"  data-upvote data-vision-id="<%= visions[i]._id%>"></i>
                                  <span class="ml-2" style="font-size: 14px;">Upvote</span>
                               </div>
                               <div class="mr-3">
@@ -136,7 +136,7 @@
                               </div>
                            </div>
                            <div class="mr-3" style="margin-left: 100px;">
-                              <i class="fa-regular fa-handshake"></i>
+                              <i class="<%= visions[i].interested.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-handshake" data-interest data-vision-id="<%= visions[i]._id%>"></i>
                               <span class="ml-2" style="font-size: 14px;">Interested</span>
                            </div>
                         </div>
@@ -210,5 +210,6 @@
       <script src="/script/fetchData.js"></script>
       <script src="/script/toast.js"></script>
       <script src="/script/pitch.js"></script>
+      <script src="/script/sse.js"></script>
    </body>
 </html>

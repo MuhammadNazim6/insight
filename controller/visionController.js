@@ -1,6 +1,7 @@
 const Vision = require("../models/visionModel.js");
 const User = require("../models/userModel.js");
 const asyncHandler = require("express-async-handler");
+const {sendInterestNotification} = require('./keepAliveController.js')
 
 const createVision = asyncHandler(async (req, res) => {
   let { title, content } = req.body;
@@ -140,6 +141,7 @@ const interestInVision = asyncHandler(async (req, res) => {
         message: "Interest Added",
         count: addedInterest.interested.length,
       });
+      await sendInterestNotification(addedInterest.userId,{type:"notification",message:"Someone showed interest in your idea"})
     } else {
       res.json({ status: "failed", message: "Unable to add interest" });
     }

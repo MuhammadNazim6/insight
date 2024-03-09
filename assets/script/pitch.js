@@ -14,12 +14,13 @@ const controlUpvote = async (e) => {
 const controlInterest = async (e) => {
     try {
         const visionId = e.currentTarget.dataset.visionId;
-        const data = await fetchData("PATCH", "/upvote", { visionId });
+        const data = await fetchData("PATCH", "/interest", { visionId });
         if ((data.status = "success")) {
-            e.currentTarget.classList.toggle("vision-active");
+            e.target.classList.toggle("fa-regular");
+            e.target.classList.toggle("fa-solid");
         }
     } catch (error) {
-        toast.error(error.message);
+        toast("error",error.message);
     }
 };
 
@@ -27,6 +28,6 @@ document.querySelectorAll(`[data-upvote]`)?.forEach((item) => {
     item.addEventListener("click", controlUpvote);
 });
 
-document.querySelectorAll("[data-interest]")?.forEach((item) => {
-    item.addEventListener("submit", controlInterest);
+document.querySelectorAll(`[data-interest]`)?.forEach((item) => {
+    item.addEventListener("click", controlInterest);
 });

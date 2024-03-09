@@ -16,6 +16,19 @@ const makeConnection = asyncHandler((req, res) => {
     });
 });
   
+const sendInterestNotification = async (userId,data)=>{
+    try {
+        const res = clients.get(userId?.toString() || userId)
+        if(res){
+            res.write("data: "+JSON.stringify(data)+"\n\n")
+        }
+        return true
+    } catch (error) {
+        
+    }
+}
+
 module.exports = {
     makeConnection,
+    sendInterestNotification
 };

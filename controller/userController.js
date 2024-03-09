@@ -119,7 +119,7 @@ const showPitchPage = asyncHandler(async (req, res) => {
     const visions = await Vision.find()
     .populate('userId')
 
-    res.render('user/pitch',{visions})
+    res.render('user/pitch',{visions,userId:req.session.userId})
 })
 
 
