@@ -22,8 +22,6 @@ const showRegister = asyncHandler(async (req, res) => {
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, mobile } = req.body;
-    // const profile = req.file.filename;
-    const profile = 'initialProfile.jpg'
     const hashedPassword = await securepassword(password)
     const isUserExists = await User.findOne({ email });
     if (isUserExists) {
@@ -34,7 +32,6 @@ const registerUser = asyncHandler(async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            profile,
             mobile
         })
         const userDataSaved = await newUser.save()
@@ -70,20 +67,18 @@ const loginUser = asyncHandler(async (req, res) => {
         res.status(401)
         throw new Error('Email or Password is incorrect')
     }
-
-
 })
 
 
 const updateProfile = asyncHandler(async (req, res) => {
 
-    const profile = req?.file?.filename;
-
     const user = await User.findById(req.session.userId)
+    const profile = req?.file?.filename ? `/images/profile/${req.file.filename}` : null
     if (user) {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
         user.mobile = req.body.mobile || user.mobile
+        user.bio = req.body.bio || user.bio 
         if (profile) {
             user.profile = profile
         }
@@ -96,17 +91,13 @@ const updateProfile = asyncHandler(async (req, res) => {
         if (updatedUser) {
             res.status(200).json({
                 status: 'success',
-                message: "Porfile updated successfully"
+                message: "Profile updated successfully"
             })
         }
 
     } else {
         throw new Error('No user found')
     }
-
-
-
-
 })
 
 const logoutUser = asyncHandler(async (req, res) => {
@@ -134,6 +125,9 @@ const showAccountPage = asyncHandler(async (req, res) => {
     console.log(user);
     res.render('user/account',{user , visions })
 })
+
+
+
 
 module.exports = {
     showHome,
