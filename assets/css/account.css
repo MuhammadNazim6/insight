@@ -47,7 +47,9 @@ body {
     box-shadow: 0 0 2px 0 rgba(185, 185, 185, 0.1);
     margin-bottom: 24px;
 }
-
+.card-body{
+    background-color: #EEEDEB;
+}
 .main-content{
 padding-top: 80px;
 }
@@ -140,6 +142,11 @@ padding-top: 80px;
     flex-grow: inherit;
     flex-shrink: 0;
     flex-basis: 0;
+}
+.post-date{
+    position: absolute;
+    right: 0;
+    margin-top: -18px;
 }
 
 .font-13 {
