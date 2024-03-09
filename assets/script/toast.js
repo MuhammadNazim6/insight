@@ -1,5 +1,5 @@
 //handles showing toast
-const toast = (type, message) => {
+const toast = (type, message,position="right") => {
     const color =
         type === "success"
             ? "linear-gradient(to right, #00b09b, #96c93d)"
@@ -9,7 +9,7 @@ const toast = (type, message) => {
         duration: 3000,
         close: true,
         gravity: "top", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
+        position, // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
             background: color,

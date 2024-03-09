@@ -16,20 +16,20 @@ const handleRegister = async (e) => {
 
         // Check if any field is empty
         if (!name || !mobile || !email || !password) {
-            toast("error", "All fields should be filled");
+            toast("error", "All fields should be filled","left");
         } else if (!name.match(nameRegex)) {
-            toast("error", "Name cannot contain consecutive spaces");
+            toast("error", "Name cannot contain consecutive spaces","left");
         } else if (!mobile.match(mobileRegex)) {
-            toast("error", "Enter a valid mobile number");
+            toast("error", "Enter a valid mobile number","left");
         } else if (!email.match(emailRegex)) {
-            toast("error", "Invalid email address");
+            toast("error", "Invalid email address","left");
         } else if (!password.match(passwordRegex)) {
             toast(
                 "error",
-                "Password must be at least 6 characters and contain at least one special character"
+                "Password must be at least 6 characters and contain at least one special character","left"
             );
         } else if (password !== confirmPassword) {
-            toast("error", "Password do not match");
+            toast("error", "Password do not match","left");
         } else {
             const data = await fetchData("POST", "/register", {
                 name,
@@ -42,7 +42,7 @@ const handleRegister = async (e) => {
             }
         }
     } catch (error) {
-        toast("error", error.message);
+        toast("error", error.message,"left");
         console.log(error);
     }
 };
@@ -57,13 +57,13 @@ const handleLogin = async (e) => {
         const passwordRegex =
             /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[a-zA-Z0-9]).{6,}$/;
         if (!email || !password) {
-            toast("error", "All fields should be filled");
+            toast("error", "All fields should be filled","left");
         } else if (!email.match(emailRegex)) {
-            toast("error", "Invalid email address");
+            toast("error", "Invalid email address","left");
         } else if (!password.match(passwordRegex)) {
             toast(
                 "error",
-                "Password must be at least 6 characters and contain at least one special character"
+                "Password must be at least 6 characters and contain at least one special character","left"
             );
         } else {
             const formData = new FormData(e.target);
@@ -73,7 +73,7 @@ const handleLogin = async (e) => {
             }
         }
     } catch (error) {
-        toast("error", error.message);
+        toast("error", error.message,"left");
     }
 };
 
