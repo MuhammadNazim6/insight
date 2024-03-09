@@ -2,16 +2,16 @@
 const message = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
 const chatbox = document.getElementById('chatbox');
-const chatsContainer = chatbox.querySelector('.chats');
+const chatsContainer = chatbox?.querySelector('.chats');
 
-message.addEventListener('keypress', (event) => {
+message?.addEventListener('keypress', (event) => {
     if (event.key == 'Enter') {
         event.preventDefault();
         sendMessage();
     }
 });
 
-sendButton.addEventListener('click', () => {
+sendButton?.addEventListener('click', () => {
     sendMessage();
 });
 

@@ -1,11 +1,11 @@
 //creating new vision
-const handleVisionSubmit = async (title,content) => {
+const handleVisionSubmit = async (title, content) => {
     try {
-        const title = e.target.elements.title.value.trim();
-        const content = e.target.elements.content.value.trim();
+        title = title.trim();
+        content = content.trim();
         if (!title || !content) {
             toast("error", "All fields should be filled");
-            return;
+            return false;
         }
         const data = await fetchData("POST", "/create-vision", {
             title,
@@ -13,10 +13,11 @@ const handleVisionSubmit = async (title,content) => {
         });
         if (data.status === "success") {
             toast("success", data.message);
+            return true
             //add vision to DOM
         }
     } catch (error) {
-        toast.error(error.message);
+        toast("error", error.message);
     }
 };
 
@@ -33,7 +34,7 @@ const handleEditVision = async (e) => {
         const data = await fetchData("PUT", "/edit-vision", {
             title,
             content,
-            visionId
+            visionId,
         });
         if (data.status === "success") {
             toast("success", data.message);
@@ -49,12 +50,12 @@ const deleteVision = async (e) => {
     try {
         const visionId = e.currentTarget.dataset.visionId;
         const data = await fetchData("DELETE", "/delete-vision", { visionId });
-        if(data.status == "success"){
-            toast("success",data.message)
+        if (data.status == "success") {
+            toast("success", data.message);
             //remove vision from dom
         }
     } catch (error) {
-        toast('error',error.message)
+        toast("error", error.message);
     }
 };
 
