@@ -77,13 +77,14 @@ const handleProfileEdit = async (profile, name, mobile, bio) => {
         const data = await fetchData("PUT", "/profile", formData, "multipart");
         if (data.status === "success") {
             toast("success", data.message);
-            //nazim update ui
-            //
-            //
+            document.getElementById('bioPara').textContent = data.userData.bio
+            document.getElementById('mobilePara').textContent = data.userData.mobile
+            document.getElementById('profileImg').src = data.userData.profile
+            console.log(data.userData);
             return true;
         }
     } catch (error) {
-        toast("error", "All fields should be filled");
+        toast("error", error.message );
         return false;
     }
 };

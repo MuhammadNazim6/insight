@@ -89,9 +89,16 @@ const updateProfile = asyncHandler(async (req, res) => {
         }
         const updatedUser = await user.save();
         if (updatedUser) {
+            const userData = {
+                name: updatedUser.name || user.name,
+                mobile: updatedUser.mobile || user.name,
+                profile: updatedUser.profile || user.name,
+                bio: updatedUser.bio || user.bio
+            }
             res.status(200).json({
                 status: 'success',
-                message: "Profile updated successfully"
+                message: "Profile updated successfully",
+                userData
             })
         }
 

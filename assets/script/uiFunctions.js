@@ -35,11 +35,13 @@ function previewImage() {
 async function openEditProfileModal(name, mobile , profile , bio ) {
     Swal.fire({
         html:
-        '<img id="image-preview" src="' + profile + '" alt="Image" class="rounded-circle avatar-lg img-thumbnail" style="cursor:pointer;" onClick>'+ 
+        '<div>'+ 
+        '<img id="image-preview" src="' + profile + '" alt="Image" class="" style="cursor:pointer; height: 100px; width: 100px; border-radius: 50px;">'+ 
+        '</div>'+ 
             '<input id="swal-profile" type="file" class="swal2-input" onchange="previewImage()" style="display:none;">' +
             '<input id="swal-name" class="swal2-input" placeholder="Name" value="' + name + '" >' +
             '<input id="swal-mobile" class="swal2-input" placeholder="Mobile" value="' + mobile + '"  >' +
-            '<textarea id="swal-bio" class="swal2-textarea" placeholder="Add a bio...">"' + bio + '"</textarea>',
+            '<textarea id="swal-bio" class="swal2-textarea" placeholder="Add a bio...">' + bio + '</textarea>',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: "Update",
