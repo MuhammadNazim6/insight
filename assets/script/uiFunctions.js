@@ -44,11 +44,11 @@ async function openEditProfileModal(name, mobile , profile , bio ) {
         showCancelButton: true,
         confirmButtonText: "Update",
         preConfirm: async () => {
-            const image = document.getElementById("swal-profile").files[0];
-            const name = document.getElementById("swal-name").value;
+            const profile = document.getElementById("swal-profile").files[0];
+            const name = document.getElementById("swal-name").value.trim();
             const mobile = document.getElementById("swal-mobile").value;
-            const bio = document.getElementById("swal-bio").value;
-            return await handleProfileEdit(image,name,mobile,bio)
+            const bio = document.getElementById("swal-bio").value.trim();
+            return await handleProfileEdit(profile,name,mobile,bio)
         },
     });
     document.getElementById("image-preview").addEventListener("click", function() {
