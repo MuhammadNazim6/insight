@@ -9,6 +9,8 @@ const imageUpload = require("../middleware/multerMiddleware")
 userRoute.get('/',userController.showHome)
 userRoute.get('/register',userController.showRegister)
 userRoute.post('/register',userController.registerUser)
+userRoute.get('/pitch',userController.showPitchPage)
+userRoute.get('/account',userController.showAccountPage)
 
 userRoute.get('/login',userController.showLogin)
 userRoute.post('/login', userController.loginUser)
