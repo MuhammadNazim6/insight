@@ -1,215 +1,366 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="h-100" lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-      <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-      <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-      <meta name="author" content="Holger Koenemann">
-      <meta name="generator" content="Eleventy v2.0.0">
-      <meta name="HandheldFriendly" content="true">
-      <title>Pitch</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=no"
+        />
+        <meta
+            name="description"
+            content="A well made and handcrafted Bootstrap 5 template"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="img/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="img/favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="img/favicon.png"
+        />
+        <meta name="author" content="Holger Koenemann" />
+        <meta name="generator" content="Eleventy v2.0.0" />
+        <meta name="HandheldFriendly" content="true" />
+        <title>Pitch</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
 
-      <link rel="stylesheet" href="css/theme.min.css">
-      <link rel="stylesheet" href="css/style.css">
-      <style>
-         /* inter-300 - latin */
-         @font-face {
-         font-family: 'Inter';
-         font-style: normal;
-         font-weight: 300;
-         font-display: swap;
-         src: local(''),
-         url('fonts/inter-v12-latin-300.woff2') format('woff2'),
-         /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('fonts/inter-v12-latin-300.woff') format('woff');
-         /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-         }
-         /* inter-400 - latin */
-         @font-face {
-         font-family: 'Inter';
-         font-style: normal;
-         font-weight: 400;
-         font-display: swap;
-         src: local(''),
-         url('fonts/inter-v12-latin-regular.woff2') format('woff2'),
-         /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('fonts/inter-v12-latin-regular.woff') format('woff');
-         /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-         }
-         @font-face {
-         font-family: 'Inter';
-         font-style: normal;
-         font-weight: 500;
-         font-display: swap;
-         src: local(''),
-         url('fonts/inter-v12-latin-500.woff2') format('woff2'),
-         /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('fonts/inter-v12-latin-500.woff') format('woff');
-         /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-         }
-         @font-face {
-         font-family: 'Inter';
-         font-style: normal;
-         font-weight: 700;
-         font-display: swap;
-         src: local(''),
-         url('fonts/inter-v12-latin-700.woff2') format('woff2'),
-         /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('fonts/inter-v12-latin-700.woff') format('woff');
-         /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-         }
-      </style>
-   </head>
-   <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
-      <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-         <div class="container">
-            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
-                  viewBox="0 0 16 16">
-                  <path
-                     d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
-                  <path
-                     d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
-               </svg>
-               <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
-            </a>
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-               <li class="nav-item">
-                  <a class="nav-link fs-5" href="/" aria-label="Homepage">
-                  Home
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link fs-5" href="/pitch" aria-label="A sample content page">
-                  Pitch
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link fs-5" href="/account" aria-label="A system message page">
-                  Account
-                  </a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <main>
-         <div class="container">
-            <div class="row d-flex justify-content-center py-vh-5 pb-0">
-               <div class="row">
-                  <div class="col-12 py-vh-2">
-                  </div>
-               </div>
-
-               <% for(let i = 0 ; i < visions.length ; i++){ %>
-                  <div class="col-12 col-lg-10 col-xl-8 mb-5">
-                     <div class="row d-flex align-items-start" data-aos="fade-right">
-                        <div class="col-12 col-lg-10">
-                           <h2 class="h3 mt-3 border-top pt-3"><%= visions[i].title %></h2>
-                           <p class="text-secondary"><%= visions[i].content %></p>
-                           <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px;">
-                              <a href="#" class="me-2">
-                              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="User Avatar" height="25">
-                              </a>
-                              <div>
-                                 <h4 class="h6 mb-0 text-muted" style="font-size: 16px;"><%= visions[i].userId.name %></h4>
-                                 <span class="ms-2 text-muted">Posted on <%= visions[i].createdAt.toLocaleDateString() %></span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
-                           <div class="d-flex align-items-center">
-                              <div class="mr-3">
-                                 <i class="<%= visions[i].upvotes.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-thumbs-up"  data-upvote data-vision-id="<%= visions[i]._id%>"></i>
-                                 <span class="ml-2" style="font-size: 14px;">Upvote</span>
-                              </div>
-                              <div class="mr-3">
-                                 <i class="fa-regular fa-comment" style="margin-left: 20px;"></i>
-                                 <span class="ml-2" style="font-size: 14px;">Comment</span>
-                              </div>
-                           </div>
-                           <div class="mr-3" style="margin-left: 100px;">
-                              <i class="<%= visions[i].interested.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-handshake" data-interest data-vision-id="<%= visions[i]._id%>"></i>
-                              <span class="ml-2" style="font-size: 14px;">Interested</span>
-                           </div>
-                        </div>
-                        
-                        
-                        <div class="col-12 col-lg-10 offset-lg-1 bg-gray-900 p-5 mt-5 comment-section" style="max-height: 250px; overflow-y: auto; position: relative;">
-                           <div class="existing-comments mt-4">
-                              <% for(let j = 0 ; j <  visions[i].comments.length ; j++){ %>
-
-                              <div class="comment d-flex align-items-start">
-                                 <a href="#" class="me-2">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                                 </a>
-                                 <div>
-                                    <h4 class="h6 mb-0"><%= visions[i].comments[j].userId %></h4>
-                                    <p><%= visions[i].comments[j].comment %></p>
-                                 </div>
-                              </div>
-         
-                              <%  } %>
-                              <!-- Add more comments as needed -->
-                           </div>
-
-                           <form class="comment-form mt-4" style="position: sticky; bottom: 0; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 35px;">
-                              <div class="d-flex align-items-start mt-2">
-                                 <a class="pe-2" href="#">
-                                 <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                                 </a>
-                                 <div class="w-100" style="margin-left: 10px;">
-                                    <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment" style="border-radius: 35px; font-size: 12px;">
-                                 </div>
-                              </div>
-                           </form>
-                        </div>
-
-                     </div>
-
-                  </div>
-               
-            <%  }  %>
-
+        <link rel="stylesheet" href="css/theme.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <style>
+            /* inter-300 - latin */
+            @font-face {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: local(""),
+                    url("fonts/inter-v12-latin-300.woff2") format("woff2"),
+                    /* Chrome 26+, Opera 23+, Firefox 39+ */
+                        url("fonts/inter-v12-latin-300.woff") format("woff");
+                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+            /* inter-400 - latin */
+            @font-face {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: local(""),
+                    url("fonts/inter-v12-latin-regular.woff2") format("woff2"),
+                    /* Chrome 26+, Opera 23+, Firefox 39+ */
+                        url("fonts/inter-v12-latin-regular.woff") format("woff");
+                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+            @font-face {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: local(""),
+                    url("fonts/inter-v12-latin-500.woff2") format("woff2"),
+                    /* Chrome 26+, Opera 23+, Firefox 39+ */
+                        url("fonts/inter-v12-latin-500.woff") format("woff");
+                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+            @font-face {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: local(""),
+                    url("fonts/inter-v12-latin-700.woff2") format("woff2"),
+                    /* Chrome 26+, Opera 23+, Firefox 39+ */
+                        url("fonts/inter-v12-latin-700.woff") format("woff");
+                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+        </style>
+    </head>
+    <body
+        class="bg-black text-white mt-0"
+        data-bs-spy="scroll"
+        data-bs-target="#navScroll"
+    >
+        <nav
+            id="navScroll"
+            class="navbar navbar-dark bg-black fixed-top px-vw-5"
+            tabindex="0"
+        >
+            <div class="container">
+                <a
+                    class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center"
+                    href="/"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-stack"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"
+                        />
+                        <path
+                            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z"
+                        />
+                    </svg>
+                    <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
+                </a>
+                <ul
+                    class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal"
+                >
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/" aria-label="Homepage">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link fs-5"
+                            href="/pitch"
+                            aria-label="A sample content page"
+                        >
+                            Pitch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link fs-5"
+                            href="/account"
+                            aria-label="A system message page"
+                        >
+                            Account
+                        </a>
+                    </li>
+                </ul>
             </div>
-         </div>
-      </main>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/aos.js"></script>
-      <script src="js/script.js"></script>
-      <script>
-         AOS.init({
-           duration: 800, // values from 0 to 3000, with step 50ms
-         });
-      </script>
-      <script>
-         let scrollpos = window.scrollY
-         const header = document.querySelector(".navbar")
-         const header_height = header.offsetHeight
-         
-         const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
-         const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
-         
-         window.addEventListener('scroll', function () {
-           scrollpos = window.scrollY;
-         
-           if (scrollpos >= header_height) { add_class_on_scroll() }
-           else { remove_class_on_scroll() }
-         
-           console.log(scrollpos)
-         })
-      </script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-      <script src="/script/fetchData.js"></script>
-      <script src="/script/toast.js"></script>
-      <script src="/script/pitch.js"></script>
-      <script src="/script/sse.js"></script>
-   </body>
+        </nav>
+        <main>
+            <div class="container">
+                <div class="row d-flex justify-content-center py-vh-5 pb-0">
+                    <div class="row">
+                        <div class="col-12 py-vh-2"></div>
+                    </div>
+
+                    <% for(let i = 0 ; i < visions.length ; i++){ %>
+                    <div class="col-12 col-lg-10 col-xl-8 mb-5">
+                        <div
+                            class="row d-flex align-items-start"
+                            data-aos="fade-right"
+                        >
+                            <div class="col-12 col-lg-10">
+                                <h2 class="h3 mt-3 border-top pt-3">
+                                    <%= visions[i].title %>
+                                </h2>
+                                <p class="text-secondary">
+                                    <%= visions[i].content %>
+                                </p>
+                                <div
+                                    class="user-info d-flex align-items-center mb-3"
+                                    style="font-size: 14px"
+                                >
+                                    <a href="#" class="me-2">
+                                        <img
+                                            src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                            class="rounded-circle"
+                                            alt="User Avatar"
+                                            height="25"
+                                        />
+                                    </a>
+                                    <div>
+                                        <h4
+                                            class="h6 mb-0 text-muted"
+                                            style="font-size: 16px"
+                                        >
+                                            <%= visions[i].userId.name %>
+                                        </h4>
+                                        <span class="ms-2 text-muted"
+                                            >Posted on <%=
+                                            visions[i].createdAt.toLocaleDateString()
+                                            %></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="d-flex align-items-center justify-content-between"
+                                style="width: 100%"
+                            >
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <i
+                                            class="<%= visions[i].upvotes.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-thumbs-up pointer"
+                                            data-upvote
+                                            data-vision-id="<%= visions[i]._id%>"
+                                        ></i>
+                                        <span
+                                            class="ml-2"
+                                            style="font-size: 14px"
+                                            >Upvote</span
+                                        >
+                                    </div>
+                                    <div class="mr-3">
+                                        <i
+                                            class="fa-regular fa-comment pointer"
+                                            style="margin-left: 20px"
+                                            data-comment-toggle="<%= visions[i]._id%>"
+                                        ></i>
+                                        <span
+                                            class="ml-2"
+                                            style="font-size: 14px"
+                                            >Comment</span
+                                        >
+                                    </div>
+                                </div>
+                                <div class="mr-3" style="margin-left: 100px">
+                                    <i
+                                        class="<%= visions[i].interested.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-handshake pointer"
+                                        data-interest
+                                        data-vision-id="<%= visions[i]._id%>"
+                                    ></i>
+                                    <span class="ml-2" style="font-size: 14px"
+                                        >Interested</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide"
+                                data-comment-div-id="<%= visions[i]._id %>"
+                            >
+                                <div class="existing-comments mt-4">
+                                    <% for(let j = 0 ; j <
+                                    visions[i].comments.length ; j++){ %>
+
+                                    <div
+                                        class="comment d-flex align-items-start"
+                                    >
+                                        <a href="#" class="me-2">
+                                            <img
+                                                src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                class="rounded-circle"
+                                                alt="Generic placeholder image"
+                                                height="31"
+                                            />
+                                        </a>
+                                        <div>
+                                            <h4 class="h6 mb-0 comment-user">
+                                                <%=
+                                                "Sabith" %>
+                                            </h4>
+                                            <p>
+                                                <%=
+                                                visions[i].comments[j].comment
+                                                %>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+                                    <!-- Add more comments as needed -->
+                                </div>
+
+                                <form class="comment-form mt-4 comment-div">
+                                    <div class="d-flex align-items-start mt-2">
+                                        <a class="pe-2" href="#">
+                                            <img
+                                                src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                                                class="rounded-circle"
+                                                alt="Generic placeholder image"
+                                                height="31"
+                                            />
+                                        </a>
+                                        <div
+                                            class="w-100"
+                                            style="margin-left: 10px"
+                                        >
+                                            <input
+                                                type="text"
+                                                id="simpleinput"
+                                                class="form-control border-0 form-control-sm"
+                                                placeholder="Add comment"
+                                                style="
+                                                    border-radius: 35px;
+                                                    font-size: 12px;
+                                                "
+                                            />
+                                            <button type="submit" class="btn-comment"><i class="fa-regular fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } %>
+                </div>
+            </div>
+        </main>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            AOS.init({
+                duration: 800, // values from 0 to 3000, with step 50ms
+            });
+        </script>
+        <script>
+            let scrollpos = window.scrollY;
+            const header = document.querySelector(".navbar");
+            const header_height = header.offsetHeight;
+
+            const add_class_on_scroll = () =>
+                header.classList.add("scrolled", "shadow-sm");
+            const remove_class_on_scroll = () =>
+                header.classList.remove("scrolled", "shadow-sm");
+
+            window.addEventListener("scroll", function () {
+                scrollpos = window.scrollY;
+
+                if (scrollpos >= header_height) {
+                    add_class_on_scroll();
+                } else {
+                    remove_class_on_scroll();
+                }
+
+                console.log(scrollpos);
+            });
+        </script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"
+        ></script>
+        <script src="/script/fetchData.js"></script>
+        <script src="/script/toast.js"></script>
+        <script src="/script/pitch.js"></script>
+        <script src="/script/sse.js"></script>
+    </body>
 </html>

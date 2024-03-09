@@ -7,7 +7,7 @@ const controlUpvote = async (e) => {
             e.target.classList.toggle("fa-solid");
         }
     } catch (error) {
-        toast("error",error.message);
+        toast("error", error.message);
     }
 };
 
@@ -20,8 +20,14 @@ const controlInterest = async (e) => {
             e.target.classList.toggle("fa-solid");
         }
     } catch (error) {
-        toast("error",error.message);
+        toast("error", error.message);
     }
+};
+
+const commentToggle = (e) => {
+    const id = e.target.dataset.commentToggle;
+    const commentSec = document.querySelector(`[data-comment-div-id="${id}"]`);
+    commentSec.classList.toggle("hide");
 };
 
 document.querySelectorAll(`[data-upvote]`)?.forEach((item) => {
@@ -30,4 +36,7 @@ document.querySelectorAll(`[data-upvote]`)?.forEach((item) => {
 
 document.querySelectorAll(`[data-interest]`)?.forEach((item) => {
     item.addEventListener("click", controlInterest);
+});
+document.querySelectorAll(`[data-comment-toggle]`)?.forEach((item) => {
+    item.addEventListener("click", commentToggle);
 });
