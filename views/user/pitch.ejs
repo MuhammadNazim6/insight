@@ -108,201 +108,75 @@
                   </div>
                </div>
 
+               <% for(let i = 0 ; i < visions.length ; i++){ %>
+                  <div class="col-12 col-lg-10 col-xl-8 mb-5">
+                     <div class="row d-flex align-items-start" data-aos="fade-right">
+                        <div class="col-12 col-lg-10">
+                           <h2 class="h3 mt-3 border-top pt-3"><%= visions[i].title %></h2>
+                           <p class="text-secondary"><%= visions[i].content %></p>
+                           <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px;">
+                              <a href="#" class="me-2">
+                              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="User Avatar" height="25">
+                              </a>
+                              <div>
+                                 <h4 class="h6 mb-0 text-muted" style="font-size: 16px;"><%= visions[i].userId.name %></h4>
+                                 <span class="ms-2 text-muted">Posted on <%= visions[i].createdAt.toLocaleDateString() %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                           <div class="d-flex align-items-center">
+                              <div class="mr-3">
+                                 <i class="fa-regular fa-thumbs-up"></i>
+                                 <span class="ml-2" style="font-size: 14px;">Upvote</span>
+                              </div>
+                              <div class="mr-3">
+                                 <i class="fa-regular fa-comment" style="margin-left: 20px;"></i>
+                                 <span class="ml-2" style="font-size: 14px;">Comment</span>
+                              </div>
+                           </div>
+                           <div class="mr-3" style="margin-left: 100px;">
+                              <i class="fa-regular fa-handshake"></i>
+                              <span class="ml-2" style="font-size: 14px;">Interested</span>
+                           </div>
+                        </div>
+                        
+                        
+                        <div class="col-12 col-lg-10 offset-lg-1 bg-gray-900 p-5 mt-5 comment-section" style="max-height: 250px; overflow-y: auto; position: relative;">
+                           <div class="existing-comments mt-4">
+                              <% for(let j = 0 ; j <  visions[i].comments.length ; j++){ %>
 
-               <div class="col-12 col-lg-10 col-xl-8">
-                  <div class="row d-flex align-items-start" data-aos="fade-right">
-                     <div class="col-12 col-lg-10">
-                        <h2 class="h3 mt-3 border-top pt-3">Matching Process</h2>
-                        <p class="text-secondary">Pair each mentee with a mentor based on their career goals, interests, and background.</p>
-                        <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px;">
-                           <a href="#" class="me-2">
-                           <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="User Avatar" height="25">
-                           </a>
-                           <h4 class="h6 mb-0 text-muted" style="font-size: 16px; margin-right: 250px;">aswnrh</h4>
-                           <span class="ms-2 text-muted">Posted on March 10, 2024</span>
-                        </div>
-                     </div>
-                     <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
-                        <div class="d-flex align-items-center">
-                           <div class="mr-3">
-                              <i class="fa-regular fa-thumbs-up" data-upvote data-vision-id="65ec20f3500d1f3d3b0a37fa"></i>
-                              <span class="ml-2" style="font-size: 14px;">Upvote</span>
-                           </div>
-                           <div class="mr-3">
-                              <i class="fa-regular fa-comment" style="margin-left: 20px;"></i>
-                              <span class="ml-2" style="font-size: 14px;">Comment</span>
-                           </div>
-                        </div>
-                        <div class="mr-3" style="margin-left: 100px;">
-                           <i class="fa-regular fa-handshake"></i>
-                           <span class="ml-2" style="font-size: 14px;">Interested</span>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-10 offset-lg-1 bg-gray-900 p-5 mt-5 comment-section" style="max-height: 250px; overflow-y: auto; position: relative;">
-                        <div class="existing-comments mt-4">
-                           <div class="comment d-flex align-items-start">
-                              <a href="#" class="me-2">
-                              <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                              </a>
-                              <div>
-                                 <h4 class="h6 mb-0">rishalup99</h4>
-                                 <p>Great Job mahn, lookingmore from you.</p>
+                              <div class="comment d-flex align-items-start">
+                                 <a href="#" class="me-2">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt="Generic placeholder image" height="31">
+                                 </a>
+                                 <div>
+                                    <h4 class="h6 mb-0"><%= visions[i].comments[j].userId %></h4>
+                                    <p><%= visions[i].comments[j].comment %></p>
+                                 </div>
                               </div>
+         
+                              <%  } %>
+                              <!-- Add more comments as needed -->
                            </div>
-                           <div class="comment d-flex align-items-start">
-                              <a href="#" class="me-2">
-                              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                              </a>
-                              <div>
-                                 <h4 class="h6 mb-0">sabith77</h4>
-                                 <p>Inspirational work mr aswnrh i would like to contribute.</p>
+
+                           <form class="comment-form mt-4" style="position: sticky; bottom: 0; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 35px;">
+                              <div class="d-flex align-items-start mt-2">
+                                 <a class="pe-2" href="#">
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="Generic placeholder image" height="31">
+                                 </a>
+                                 <div class="w-100" style="margin-left: 10px;">
+                                    <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment" style="border-radius: 35px; font-size: 12px;">
+                                 </div>
                               </div>
-                           </div>
-                           <!-- Add more comments as needed -->
+                           </form>
                         </div>
-                        <form class="comment-form mt-4" style="position: sticky; bottom: 0; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 35px;">
-                           <div class="d-flex align-items-start mt-2">
-                              <a class="pe-2" href="#">
-                              <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                              </a>
-                              <div class="w-100" style="margin-left: 10px;">
-                                 <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment" style="border-radius: 35px; font-size: 12px;">
-                              </div>
-                           </div>
-                        </form>
+
                      </div>
+
                   </div>
-               </div>
-
-
-
-
-
-               <div class="col-12 col-lg-10 col-xl-8">
-                <div class="row d-flex align-items-start" data-aos="fade-right">
-                   <div class="col-12 col-lg-10">
-                      <h2 class="h3 mt-3 border-top pt-3">Structured Sessions</h2>
-                      <p class="text-secondary">Establish a framework for regular mentor-mentee interactions.</p>
-                      <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px;">
-                         <a href="#" class="me-2">
-                         <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="User Avatar" height="25">
-                         </a>
-                         <h4 class="h6 mb-0 text-muted" style="font-size: 16px; margin-right: 250px;">nazim66</h4>
-                         <span class="ms-2 text-muted">Posted on Feb 10, 2024</span>
-                      </div>
-                   </div>
-                   <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
-                      <div class="d-flex align-items-center">
-                         <div class="mr-3">
-                           <i class="fa-regular fa-thumbs-up"></i>
-                            <span class="ml-2" style="font-size: 14px;">Upvote</span>
-                         </div>
-                         <div class="mr-3">
-                            <i class="fa-regular fa-comment" style="margin-left: 20px;"></i>
-                            <span class="ml-2" style="font-size: 14px;">Comment</span>
-                         </div>
-                      </div>
-                      <div class="mr-3" style="margin-left: 100px;">
-                         <i class="fa-regular fa-handshake"></i>
-                         <span class="ml-2" style="font-size: 14px;">Interested</span>
-                      </div>
-                   </div>
-                   <div class="col-12 col-lg-10 offset-lg-1 bg-gray-900 p-5 mt-5 comment-section" style="max-height: 250px; overflow-y: auto; position: relative;">
-                      <div class="existing-comments mt-4">
-                         <div class="comment d-flex align-items-start">
-                            <a href="#" class="me-2">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                            </a>
-                            <div>
-                               <h4 class="h6 mb-0">rishalup99</h4>
-                               <p>Great Job mahn, lookingmore from you.</p>
-                            </div>
-                         </div>
-                         
-                         <!-- Add more comments as needed -->
-                      </div>
-                      <form class="comment-form mt-4" style="position: sticky; bottom: 0; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 35px;">
-                         <div class="d-flex align-items-start mt-2">
-                            <a class="pe-2" href="#">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                            </a>
-                            <div class="w-100" style="margin-left: 10px;">
-                               <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment" style="border-radius: 35px; font-size: 12px;">
-                            </div>
-                         </div>
-                      </form>
-                   </div>
-                </div>
-             </div>
-
-             <div class="col-12 col-lg-10 col-xl-8">
-              <div class="row d-flex align-items-start" data-aos="fade-right">
-                 <div class="col-12 col-lg-10">
-                    <h2 class="h3 mt-3 border-top pt-3">Community Building</h2>
-                    <p class="text-secondary">Create a supportive community where mentees can connect with each other, share experiences, and provide mutual support.</p>
-                    <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px;">
-                       <a href="#" class="me-2">
-                       <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="rounded-circle" alt="User Avatar" height="25">
-                       </a>
-                       <h4 class="h6 mb-0 text-muted" style="font-size: 16px; margin-right: 250px;">aliya butt</h4>
-                       <span class="ms-2 text-muted">Posted on jan 10, 2024</span>
-                    </div>
-                 </div>
-                 <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
-                    <div class="d-flex align-items-center">
-                       <div class="mr-3">
-                          <i class="fa-regular fa-thumbs-up"></i>
-                          <span class="ml-2" style="font-size: 14px;">Upvote</span>
-                       </div>
-                       <div class="mr-3">
-                          <i class="fa-regular fa-comment" style="margin-left: 20px;"></i>
-                          <span class="ml-2" style="font-size: 14px;">Comment</span>
-                       </div>
-                    </div>
-                    <div class="mr-3" style="margin-left: 100px;">
-                       <i class="fa-regular fa-handshake"></i>
-                       <span class="ml-2" style="font-size: 14px;">Interested</span>
-                    </div>
-                 </div>
-                 <div class="col-12 col-lg-10 offset-lg-1 bg-gray-900 p-5 mt-5 comment-section" style="max-height: 250px; overflow-y: auto; position: relative;">
-                    <div class="existing-comments mt-4">
-                       <div class="comment d-flex align-items-start">
-                          <a href="#" class="me-2">
-                          <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                          </a>
-                          <div>
-                             <h4 class="h6 mb-0">rishalup99</h4>
-                             <p>Great Job madam, i love you.</p>
-                          </div>
-                       </div>
-                       <div class="comment d-flex align-items-start">
-                          <a href="#" class="me-2">
-                          <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                          </a>
-                          <div>
-                             <h4 class="h6 mb-0">sabith77</h4>
-                             <p>will you marry me.</p>
-                          </div>
-                       </div>
-                       <!-- Add more comments as needed -->
-                    </div>
-                    <form class="comment-form mt-4" style="position: sticky; bottom: 0; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 35px;">
-                       <div class="d-flex align-items-start mt-2">
-                          <a class="pe-2" href="#">
-                          <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt="Generic placeholder image" height="31">
-                          </a>
-                          <div class="w-100" style="margin-left: 10px;">
-                             <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment" style="border-radius: 35px; font-size: 12px;">
-                          </div>
-                       </div>
-                    </form>
-                 </div>
-              </div>
-           </div>
-
-
-
-
+               
+            <%  }  %>
 
             </div>
          </div>

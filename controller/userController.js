@@ -112,11 +112,14 @@ const logoutUser = asyncHandler(async (req, res) => {
     req.session.destroy();
 
     res.json({status:'success', message: "User logged out" });
-});
-
+}); 
+  
 
 const showPitchPage = asyncHandler(async (req, res) => {
-    res.render('user/pitch')
+    const visions = await Vision.find()
+    .populate('userId')
+
+    res.render('user/pitch',{visions})
 })
 
 
