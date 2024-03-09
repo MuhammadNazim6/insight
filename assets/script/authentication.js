@@ -60,12 +60,14 @@ const handleLogin = async (e) => {
             toast("error", "All fields should be filled","left");
         } else if (!email.match(emailRegex)) {
             toast("error", "Invalid email address","left");
-        } else if (!password.match(passwordRegex)) {
-            toast(
-                "error",
-                "Password must be at least 6 characters and contain at least one special character","left"
-            );
-        } else {
+        } 
+        // else if (!password.match(passwordRegex)) {
+        //     toast(
+        //         "error",
+        //         "Password must be at least 6 characters and contain at least one special character","left"
+        //     );
+        // } 
+        else {
             const formData = new FormData(e.target);
             const data = await fetchData("POST", "/login", { email, password });
             if (data.status === "success") {
