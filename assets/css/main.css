@@ -7,7 +7,7 @@
     color: rgb(193, 168, 9);
 }
 .hide {
-    /* display: none; */
+    display: none;
 }
 .btn-comment {
     position: absolute;
