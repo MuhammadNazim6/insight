@@ -1,5 +1,5 @@
 //creating new vision
-const handleVisionSubmit = async (e) => {
+const handleVisionSubmit = async (title,content) => {
     try {
         const title = e.target.elements.title.value.trim();
         const content = e.target.elements.content.value.trim();
@@ -62,9 +62,6 @@ const addVisionToDOM = () => {
     //code to add new vision
 };
 
-document
-    .querySelector("#addPostForm")
-    ?.addEventListener("submit", handlePostSubmit);
 document
     .querySelector("#editVisionForm")
     ?.addEventListener("click", handleEditVision);
