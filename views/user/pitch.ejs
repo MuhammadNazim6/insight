@@ -106,13 +106,24 @@
         </style>
     </head>
 
-<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
-    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-        <div class="container">
-            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
-                <i class="fa-solid fa-people-group"></i>
-                <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
-             </a>
+    <body
+        class="bg-black text-white mt-0"
+        data-bs-spy="scroll"
+        data-bs-target="#navScroll"
+    >
+        <nav
+            id="navScroll"
+            class="navbar navbar-dark bg-black fixed-top px-vw-5"
+            tabindex="0"
+        >
+            <div class="container">
+                <a
+                    class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center"
+                    href="/"
+                >
+                    <i class="fa-solid fa-people-group"></i>
+                    <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
+                </a>
 
                 <ul
                     class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal"
@@ -144,8 +155,10 @@
             </div>
         </nav>
         <main>
-            <div class="container">
-                <div class="row d-flex justify-content-center py-vh-5 pb-0">
+            <div class="container mt-5 mt-lg-0">
+                <div
+                    class="row d-flex justify-content-center py-vh-5 pb-0 mt-5 mt-lg-0"
+                >
                     <div class="row">
                         <div class="col-12 py-vh-2"></div>
                     </div>
@@ -168,12 +181,11 @@
                                     style="font-size: 14px"
                                 >
                                     <a href="#" class="me-2">
-                                        <img
-                                            src="<%= visions[i].userId.profile %>"
-                                            class="rounded-circle"
-                                            alt="User Avatar"
-                                            height="25"
-                                        />
+                                        <div class="comment-img-preview">
+                                            <img
+                                                src="<%= visions[i].userId.profile %>"
+                                            />
+                                        </div>
                                     </a>
                                     <div>
                                         <h4
@@ -247,15 +259,13 @@
                                             <div class="comment-img-preview">
                                                 <img
                                                     src="<%= visions[i].comments[j].userId.profile%>"
-                                                    class="rounded-circle"
-                                                    alt="Generic placeholder image"
-                                                    height="31"
                                                 />
                                             </div>
                                         </a>
                                         <div>
                                             <h4 class="h6 mb-0 comment-user">
-                                                <%= visions[i].comments[j].userId.name%>
+                                                <%=
+                                                visions[i].comments[j].userId.name%>
                                             </h4>
                                             <p>
                                                 <%=

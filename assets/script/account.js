@@ -153,6 +153,7 @@ const handleProfileEdit = async (profile, name, mobile, bio) => {
     }
 };
 
+
 document
     .querySelector("#editVisionForm")
     ?.addEventListener("click", handleEditVision);

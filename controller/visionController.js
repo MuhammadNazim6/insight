@@ -1,7 +1,8 @@
 const Vision = require("../models/visionModel.js");
 const User = require("../models/userModel.js");
+const Chat = require('../models/chatModel.js')
 const asyncHandler = require("express-async-handler");
-const { sendInterestNotification } = require("./keepAliveController.js");
+const { sendInterestNotification, sendMessageToclients } = require("./keepAliveController.js");
 
 const createVision = asyncHandler(async (req, res) => {
     let { title, content } = req.body;
@@ -239,6 +240,41 @@ const deleteComment = asyncHandler(async (req, res) => {
         });
     }
 });
+const sendMessage = asyncHandler(async (req,res)=>{
+    const {message,visionId} =req.body 
+    const userId = req.session.userId
+    const {interested} = await Vision.findById(visionId,{interested:1})
+    const users = interested.map((item)=>{
+        const user = item.userId.toString()
+        if(user!=userId){
+            return user
+        }else{
+            return "342872ewjhjkdfskjd"
+        }
+    })
+    let visionChat = await Chat.findOne({visionId})
+    if(!visionChat){
+        visionChat =await new Chat({visionId,messages:[{userId,message}]}).save()
+    }else{
+        visionChat.messages.push({userId,message})
+        await visionChat.save()
+    }
+    const {name} = await User.findById(userId)
+    const rawTime = visionChat.messages[visionChat.messages.length-1].sendAt
+    const time = rawTime.toLocaleDateString()+" "+rawTime.toLocaleTimeString()
+    const messageDetails = {message,name,time}
+    console.log(users);
+    await sendMessageToclients(users,{type:"message",messageDetails})
+    res.status(200).json({
+        status: "success",
+        messageDetails
+    });
+})
+const getMessages = asyncHandler(async(req,res)=>{
+    const {visionId} = req.params
+    const {messages} = await Chat.findOne({visionId}).populate('messages.userId') ||{}
+    res.status(200).json({status:"success",messages,userId:req.session.userId})
+})
 
 module.exports = {
     createVision,
@@ -248,4 +284,6 @@ module.exports = {
     deleteVision,
     deleteComment,
     editVision,
+    sendMessage,
+    getMessages
 };

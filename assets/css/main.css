@@ -102,3 +102,6 @@
     height: 100%;
     object-fit: cover;
 }
+.red{
+    background-color: red !important;
+}

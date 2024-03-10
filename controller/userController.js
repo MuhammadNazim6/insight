@@ -131,7 +131,8 @@ const showAccountPage = asyncHandler(async (req, res) => {
 
     const myInterestedVisions = await Vision.find({'interested.userId': req.session.userId })
     .populate('userId')
-        
+
+
     res.render('user/account',{user , visions , myInterestedVisions })
 })
 

@@ -23,6 +23,8 @@ userRoute.put('/profile',imageUpload,auth,userController.updateProfile)
 userRoute.delete('/delete-vision',auth,visionController.deleteVision)
 userRoute.delete('/delete-comment',auth,visionController.deleteComment)
 userRoute.put('/edit-vision',auth,visionController.editVision)
+userRoute.post('/send-message',auth,visionController.sendMessage)
+userRoute.get('/get-message/:visionId',auth,visionController.getMessages)
 
 userRoute.get('/make-connection',auth,keepAliveController.makeConnection)
 

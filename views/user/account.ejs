@@ -1,244 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
 
-<head>
-    <meta charset="utf-8">
+        <title>Insight</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="img/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="img/favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="img/favicon.png"
+        />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
+        <link rel="stylesheet" href="css/theme.min.css" />
+        <link rel="stylesheet" href="/css/account.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+    </head>
 
+    <body>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+            integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc="
+            crossorigin="anonymous"
+        />
 
-    <title>Insight</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"   />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="css/theme.min.css">
-    <link rel="stylesheet" href="/css/account.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
+        <nav
+            id="navScroll"
+            class="navbar navbar-dark bg-black fixed-top px-vw-5"
+            tabindex="0"
+        >
+            <div class="container">
+                <a
+                    class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center"
+                    href="/"
+                >
+                    <i class="fa-solid fa-people-group"></i>
+                    <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
+                </a>
 
-<body>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
-        integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+                <ul
+                    class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal"
+                >
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/" aria-label="Homepage">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link fs-5"
+                            href="/pitch"
+                            aria-label="A sample content page"
+                        >
+                            Pitch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link fs-5"
+                            href="/account"
+                            aria-label="A system message page"
+                        >
+                            Account
+                        </a>
+                    </li>
+                </ul>
+                <a href=""><img src="" alt="" /></a>
+            </div>
+        </nav>
 
-    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-        <div class="container">
-            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
-                <i class="fa-solid fa-people-group"></i>
-                <span class="ms-md-1 mt-1 fw-bolder me-md-5">Insight</span>
-            </a>
-            </a>
+        <!-- MODAL CONTENT GOES HERE ----STARTING-->
 
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-                <li class="nav-item">
-                    <a class="nav-link fs-5" href="/" aria-label="Homepage">
-                        Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-5" href="/pitch" aria-label="A sample content page">
-                        Pitch
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-5" href="/account" aria-label="A system message page">
-                        Account
-                    </a>
-                </li>
-            </ul>
-            <a href=""><img src="" alt=""></a>
-        </div>
-    </nav>
+        <!-- MODAL CONTENT GOES HERE -->
+        <div class="container mt-5 main-content pt-5">
+            <div class="row mt-5 mt-lg-0 pt-5 pt-lg-0">
+                <div class="col-xl-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown custom-dropdown float-end">
+                                <a
+                                    href="#"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <!-- Add an icon or text for the dropdown button -->
+                                    <i
+                                        class="fa-solid fa-ellipsis-vertical"
+                                        style="color: #ffffff"
+                                    ></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a
+                                        id="edit-profile-button"
+                                        href="javascript:void(0);"
+                                        class="dropdown-item"
+                                        onclick="openEditProfileModal('<%= user.name %>', '<%= user.mobile %>' , '<%= user.profile %>' ,'<%= user.bio %>' )"
+                                        >Edit</a
+                                    >
 
-    <!-- MODAL CONTENT GOES HERE ----STARTING-->
-
-
-
-
-
-    <!-- MODAL CONTENT GOES HERE -->
-    <div class="container mt-5 main-content">
-        <div class="row">
-            <div class="col-xl-5">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="dropdown custom-dropdown float-end">
-                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                <!-- Add an icon or text for the dropdown button -->
-                                <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a id="edit-profile-button" href="javascript:void(0);" class="dropdown-item" onclick="openEditProfileModal('<%= user.name %>', '<%= user.mobile %>' , '<%= user.profile %>' ,'<%= user.bio %>' )">Edit</a>
-                                
-                                <!-- Add more dropdown items as needed -->
+                                    <!-- Add more dropdown items as needed -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-start">
-                            <!-- Add space for profile image -->
-                            <div>
-                                <img id="profileImg" src="<%= user.profile %>"
-                                    class="" style="height: 100px; width: 100px; border-radius: 50px;" alt="profile-image">
+                            <div class="d-flex align-items-start">
+                                <!-- Add space for profile image -->
+                                <div>
+                                    <img
+                                        id="profileImg"
+                                        src="<%= user.profile %>"
+                                        class=""
+                                        style="
+                                            height: 100px;
+                                            width: 100px;
+                                            border-radius: 50px;
+                                        "
+                                        alt="profile-image"
+                                    />
+                                </div>
+                                <div class="w-100 ms-3">
+                                    <h4 id="namePara" class="my-0">
+                                        <%= user.name %>
+                                    </h4>
+                                </div>
                             </div>
-                            <div class="w-100 ms-3">
-                                <h4 id="namePara" class="my-0"><%= user.name %></h4>
+                            <div class="mt-3">
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>Bio :</strong
+                                    ><span id="bioPara" class="ms-2">
+                                        <%= user.bio %>
+                                    </span>
+                                </p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>Mobile :</strong
+                                    ><span id="mobilePara" class="ms-2">
+                                        <%= user.mobile %>
+                                    </span>
+                                </p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>Email :</strong>
+                                    <span id="emailPara" class="ms-2">
+                                        <%= user.email %>
+                                    </span>
+                                </p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>Total Visions :</strong>
+                                    <span id="visionCountPara" class="ms-2">
+                                        <%= visions.length %>
+                                    </span>
+                                </p>
                             </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="text-muted mb-2 font-13"><strong>Bio :</strong><span id="bioPara" class="ms-2">
-                                    <%= user.bio %>
-                                </span></p>
-                            <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span  id="mobilePara" class="ms-2">
-                                    <%= user.mobile %>
-                                </span></p>
-                            <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span id="emailPara" class="ms-2">
-                                    <%= user.email %>
-                                </span>
-                            </p>
-                            <p class="text-muted mb-2 font-13"><strong>Total Visions :</strong> <span id="visionCountPara" class="ms-2">
-                                    <%= visions.length %>
-                                </span>
-                            </p>
                         </div>
                     </div>
 
-
-                </div>
-
-
-                <div class="card">
-                    <div class="card-body">
-
-                        <h5 class="header-title mb-3 d-flex justify-content-between">
-                            <div>
-                                <span>Interested Members </span>
-                            <i class="mdi mdi-account-multiple ms-1" style="vertical-align: middle;"></i>  
+                    <div class="card bg-dark">
+                        <div class="chat-sec-bar">
+                            <i class="fa-solid fa-list mr-2 pointer" onclick="showInterest()"></i>
+                            <i class="fa-regular fa-comments pointer" onclick="showChatDiv()"></i>
+                        </div>
+                        <div class="card-body" data-interest >
+                            <div
+                                class="header-title mb-3 d-flex justify-content-between"
+                            >
+                                <div>
+                                    <span><h5>Interested Members</h5> </span>
+                                </div>
+                                <div></div>
                             </div>
-                           <div>
-                            <i style="font-size: large; cursor: pointer; color: #ffffff;" class="fa-solid fa-list mr-2"></i>
-                            <i style="font-size: large; vertical-align: bottom; cursor: pointer;" class="fa-regular fa-comments" ></i> 
-                           </div>
-                        </h5>
-                        <div class="list-group">
+                            <div class="list-group">
+                                <div
+                                    class="simplebar-content scrollable-list"
+                                    style="padding: 0px"
+                                >
+                                    <% for (let i=0; i < visions?.length; i++) {
+                                    %> <% for (let j=0; j <
+                                    visions[i]?.interested.length; j++) { %>
 
-                            <div class="simplebar-content scrollable-list" style="padding: 0px;">
-                                <% for (let i=0; i < visions?.length; i++) { %>
-                                    <% for (let j=0; j < visions[i]?.interested.length; j++) { %>
-                                
-                                    <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                    <div
+                                        class="d-flex align-items-center pb-1 row-person"
+                                        id="tooltips-container"
+                                    >
                                         <div class="chat-pfp-container">
-                                        <img src="  <%= visions[i].interested[j].userId.profile %>"
-                                        alt>
+                                            <img
+                                                src="  <%= visions[i].interested[j].userId.profile %>"
+                                                alt
+                                            />
                                         </div>
                                         <div class="w-100 ms-3">
-                                            <h6 class="mb-1"><%= visions[i].interested[j].userId.name %></h6>
-                                            <p class="mb-0 font-13"> <%= visions[i].title %></p>
+                                            <h6 class="mb-1">
+                                                <%=
+                                                visions[i].interested[j].userId.name
+                                                %>
+                                            </h6>
+                                            <p class="mb-0 font-13">
+                                                <%= visions[i].title %>
+                                            </p>
                                         </div>
-                                        <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                            data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
-                                            data-bs-placement="left" title data-bs-original-title="Reply">
-                                            <i class="mdi mdi-reply"></i> </a>
                                     </div>
-                                <%  } } %>
-
+                                    <% } } %>
                                 </div>
 
                                 <!-- My interested visions  -->
 
-                                <h5 class="header-title mt-5 mb-3">My interested visions <i class="fa-regular fa-lightbulb"></i></h5>
-                                <div class="simplebar-content scrollable-list" style="padding: 0px;">
-                                <% for (let i=0; i < myInterestedVisions?.length; i++) { %>
-                                
-                                    <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                <h5 class="header-title mt-5 mb-3">
+                                    My interested visions
+                                    <i class="fa-regular fa-lightbulb"></i>
+                                </h5>
+                                <div
+                                    class="simplebar-content scrollable-list"
+                                    style="padding: 0px"
+                                >
+                                    <% for (let i=0; i <
+                                    myInterestedVisions?.length; i++) { %>
+
+                                    <div
+                                        class="d-flex align-items-center pb-1 row-person"
+                                        id="tooltips-container"
+                                    >
                                         <div class="chat-pfp-container">
-                                            <img src=" <%= myInterestedVisions[i].userId.profile %>"
-                                            alt>
+                                            <img
+                                                src=" <%= myInterestedVisions[i].userId.profile %>"
+                                                alt
+                                            />
                                         </div>
                                         <div class="w-100 ms-3">
-                                            <h6 class="mb-1"><%= myInterestedVisions[i].title %></h6>
-                                            <p class="mb-0 font-13"><%= myInterestedVisions[i].userId.name %></p>
+                                            <h6 class="mb-1">
+                                                <%= myInterestedVisions[i].title
+                                                %>
+                                            </h6>
+                                            <p class="mb-0 font-13">
+                                                <%=
+                                                myInterestedVisions[i].userId.name
+                                                %>
+                                            </p>
                                         </div>
-                                        <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                            data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
-                                            data-bs-placement="left" title data-bs-original-title="Reply">
-                                            <i class="mdi mdi-reply"></i> </a>
                                     </div>
-                                <%  } %>
-
+                                    <% } %>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="chat-container hide" data-chat-show >
+                            <h5 class="header-title p-2 text-center">Chats</h5>
+                            <div class="chat-row-div">
+                                <div class="chat-homescreen" data-homescreen >
+                                    <% myInterestedVisions.forEach((vision)=>{ %>
+                                    <div class="chat-row" onclick="showIndividualChat('<%= vision._id%>')">
 
-                <!-- <div class="card">
-                    <div class="card-body">
-                        <h4 class="header-title mb-4">My interested visions <i class="fa-regular fa-lightbulb"></i></h4>
-                        <div class="inbox-widget" data-simplebar="init" style="max-height: 350px;">
-                            <div class="simplebar-wrapper" style="margin: 0px;">
-                                <div class="simplebar-height-auto-observer-wrapper">
-                                    <div class="simplebar-height-auto-observer"></div>
+                                        
+                                        <div class="chat-title">
+                                            <%= vision.title %>
+                                        </div>
+                                        <div class="chat-members">
+                                            dsfdss sdfds dfds
+                                        </div>
+                                    </div>
+                                    <%})%>
+
                                 </div>
-                                <div class="simplebar-mask">
-                                    <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                        <div class="simplebar-content-wrapper"
-                                            style="height: auto; overflow: hidden scroll;">
 
-                                            <div class="simplebar-content scrollable-list" style="padding: 0px;">
-
-                                            <% for(let i = 0 ; i < myInterestedVisions.length ; i++){  %>
-                                            
-                                                <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                                    <img src=" <%= myInterestedVisions[i].userId.profile %>"
-                                                    class="rounded-circle img-fluid avatar-md bg-transparent"
-                                                    alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h6 class="mb-1"><%= myInterestedVisions[i].title %></h6>
-                                                        <p class="mb-0 font-13"><%= myInterestedVisions[i].userId.name %></p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
-                                                        data-bs-placement="left" title data-bs-original-title="Reply">
-                                                        <i class="mdi mdi-reply"></i> </a>
-                                                </div>
-
-                                            <%  }  %>
-
+                                <div class="chat-individual hide" data-individual >
+                                    <div class="chat-individual-nav">
+                                        <button onclick="gotoHomescreen()">
+                                            <i
+                                                class="fa-solid fa-circle-left"
+                                            ></i>
+                                        </button>
+                                        <div class="chatind-titlebar">
+                                            <div class="chat-title">
+                                                fhdskjh dsjfhkjds dsjsfhds
+                                            </div>
+                                            <div class="chat-members">
+                                                dsfdss sdfds dfds
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="chat-history" data-chat-history>
+                                                                              
+                                        
+                                    </div>
+                                    <div class="chat-input-div">
+                                        <form action="" id="sendChat" class="d-flex w-100" method="post" onsubmit="sendChat(event)">
+                                            <input type="text" name="chat" id="" class="flex-grow-1">
+                                            <button>send</button>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="simplebar-placeholder" style="width: auto; height: 532px;"></div>
-                            </div>
-                            <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                                <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
-                            </div>
-                            <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-                                <div class="simplebar-scrollbar"
-                                    style="height: 230px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
                             </div>
                         </div>
                     </div>
-                </div> -->
-
-
-            </div>
-            <div class="col-xl-7">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="comment-area-box mb-3">
-                            <span class="input-icon">
-                                <!-- <textarea rows="3" class="form-control" placeholder="Write something..."></textarea> -->
-                            </span>
-                            <div class="comment-area-btn" style="height: 60px;">
-                                <div class="float-end">
-                                    <button id="post-button">Pitch Idea</button>
-                                </div>
-                                <div>
-                                    <!-- <a href="#" class="btn btn-sm btn-light text-black-50"><i
+                </div>
+                <div class="col-xl-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="comment-area-box mb-3">
+                                <span class="input-icon">
+                                    <!-- <textarea rows="3" class="form-control" placeholder="Write something..."></textarea> -->
+                                </span>
+                                <div
+                                    class="comment-area-btn"
+                                    style="height: 60px"
+                                >
+                                    <div class="float-end">
+                                        <button
+                                            id="post-button"
+                                            class="button-post"
+                                        >
+                                            Pitch Idea
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <!-- <a href="#" class="btn btn-sm btn-light text-black-50"><i
                                             class="far fa-user"></i></a>
                                     <a href="#" class="btn btn-sm btn-light text-black-50"><i
                                             class="fa fa-map-marker-alt"></i></a>
@@ -246,103 +347,152 @@
                                             class="fa fa-camera"></i></a>
                                     <a href="#" class="btn btn-sm btn-light text-black-50"><i
                                             class="far fa-smile"></i></a> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="container bg-dark">
-                            <div class="row d-flex justify-content-center  pt-3" data-pitch-container>
-
-                                <% for(let i = 0 ; i < visions.length ; i++){ %>
-                                <div class="col-12 col-lg-10 col-xl-10 container-post mb-3 pb-4">
-                                    <div class="row d-flex align-items-start" data-aos="fade-right">
-                                        <div class="col-12 col-lg-10">
-                                            <h2 class="h3 mt-3">
-                                               <%=  visions[i].title %>
-                                            </h2>
-                                            <p class="text-secondary">
-                                                <%=  visions[i].content %>
-                                            </p>
-                                            <div class="user-info d-flex align-items-center mb-3"
-                                                style="font-size: 14px">
-                                                <div>
-                                                    <span class="ms-2 text-muted post-date"> <%=  visions[i].createdAt.toLocaleDateString() %></span>
+                            <div class="container bg-dark">
+                                <div
+                                    class="row d-flex justify-content-center pt-3"
+                                    data-pitch-container
+                                >
+                                    <% for(let i = 0 ; i < visions.length ;
+                                    i++){ %>
+                                    <div
+                                        class="col-12 col-lg-10 col-xl-10 container-post mb-3 pb-4"
+                                    >
+                                        <div
+                                            class="row d-flex align-items-start"
+                                            data-aos="fade-right"
+                                        >
+                                            <div class="col-12 col-lg-10">
+                                                <h2 class="h3 mt-3">
+                                                    <%= visions[i].title %>
+                                                </h2>
+                                                <p class="text-secondary">
+                                                    <%= visions[i].content %>
+                                                </p>
+                                                <div
+                                                    class="user-info d-flex align-items-center mb-3"
+                                                    style="font-size: 14px"
+                                                >
+                                                    <div>
+                                                        <span
+                                                            class="ms-2 text-muted post-date"
+                                                        >
+                                                            <%=
+                                                            visions[i].createdAt.toLocaleDateString()
+                                                            %></span
+                                                        >
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between"
-                                            style="width: 100%">
-                                            <div class="d-flex align-items-center">
-                                                <div class="pointer">
-                                                    <span class="ml-2" style="font-size: 14px"><strong><%= visions[i].upvotes.length %> </strong > Upvotes</span>
+                                            <div
+                                                class="d-flex align-items-center justify-content-between"
+                                                style="width: 100%"
+                                            >
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div class="pointer">
+                                                        <span
+                                                            class="ml-2"
+                                                            style="
+                                                                font-size: 14px;
+                                                            "
+                                                            ><strong
+                                                                ><%=
+                                                                visions[i].upvotes.length
+                                                                %>
+                                                            </strong>
+                                                            Upvotes</span
+                                                        >
+                                                    </div>
+                                                    <div class="pointer">
+                                                        <i
+                                                            class="fa-regular fa-comment pointer"
+                                                            style="
+                                                                margin-left: 50px;
+                                                            "
+                                                        ></i>
+                                                        <span
+                                                            class=""
+                                                            style="
+                                                                font-size: 14px;
+                                                            "
+                                                            >Comment</span
+                                                        >
+                                                    </div>
                                                 </div>
-                                                <div class="pointer">
-                                                    <i class="fa-regular fa-comment pointer"
-                                                        style="margin-left: 50px"></i>
-                                                    <span class="" style="font-size: 14px">Comment</span>
+                                                <div
+                                                    class="pointer"
+                                                    style="margin-left: 100px"
+                                                >
+                                                    <span
+                                                        class="ml-2"
+                                                        style="font-size: 14px"
+                                                        ><strong
+                                                            ><%=
+                                                            visions[i].interested.length
+                                                            %> </strong
+                                                        >Interested</span
+                                                    >
                                                 </div>
-                                            </div>
-                                            <div class="pointer" style="margin-left: 100px">
-                                                <span class="ml-2" style="font-size: 14px"><strong><%= visions[i].interested.length %> </strong >Interested</span>
                                             </div>
                                         </div>
                                     </div>
+                                    <% } %>
                                 </div>
-                            <% } %>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            AOS.init({
+                duration: 800, // values from 0 to 3000, with step 50ms
+            });
+        </script>
+        <script>
+            let scrollpos = window.scrollY;
+            const header = document.querySelector(".navbar");
+            const header_height = header.offsetHeight;
 
-    </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        AOS.init({
-            duration: 800, // values from 0 to 3000, with step 50ms
-        });
-    </script>
-    <script>
-        let scrollpos = window.scrollY;
-        const header = document.querySelector(".navbar");
-        const header_height = header.offsetHeight;
+            const add_class_on_scroll = () =>
+                header.classList.add("scrolled", "shadow-sm");
+            const remove_class_on_scroll = () =>
+                header.classList.remove("scrolled", "shadow-sm");
 
-        const add_class_on_scroll = () =>
-            header.classList.add("scrolled", "shadow-sm");
-        const remove_class_on_scroll = () =>
-            header.classList.remove("scrolled", "shadow-sm");
+            window.addEventListener("scroll", function () {
+                scrollpos = window.scrollY;
 
-        window.addEventListener("scroll", function () {
-            scrollpos = window.scrollY;
-
-            if (scrollpos >= header_height) {
-                add_class_on_scroll();
-            } else {
-                remove_class_on_scroll();
-            }
-        });
-    </script>
-    <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="/script/fetchData.js"></script>
-    <script src="/script/toast.js"></script>
-    <script src="/script/account.js"></script>
-    <script src="/script/sse.js"></script>
-    <script src="/script/uiFunctions.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-</body>
-
+                if (scrollpos >= header_height) {
+                    add_class_on_scroll();
+                } else {
+                    remove_class_on_scroll();
+                }
+            });
+        </script>
+        <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"
+        ></script>
+        <script src="/script/fetchData.js"></script>
+        <script src="/script/toast.js"></script>
+        <script src="/script/account.js"></script>
+        <script src="/script/chat.js"></script>
+        <script src="/script/sse.js"></script>
+        <script src="/script/uiFunctions.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

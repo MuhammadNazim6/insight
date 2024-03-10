@@ -6,7 +6,8 @@ eventSource.onmessage = (event) => {
     }
 
     if(data.type == "message"){
-        handleIncomingMessage(data.messageDetails)
+        handleMessages(data.messageDetails,"left")
+        toast("success",data.message+" from chat")
     }
 };
 
