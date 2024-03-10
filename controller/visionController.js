@@ -187,7 +187,7 @@ const addComment = asyncHandler(async (req, res) => {
             throw new Error("Failed to add comment");
         }
     } else {
-        throw new Error("Failed to add comment");
+        throw new Error("Failed to add comment"); 
     }
 });
 
