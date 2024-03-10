@@ -78,3 +78,14 @@
     border-radius: 20px; /* roundness of the scroll thumb */
     border: 3px solid rgb(44, 44, 44); /* creates padding around scroll thumb */
 }
+.comment-img-preview{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.comment-img-preview > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

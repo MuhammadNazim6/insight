@@ -70,7 +70,7 @@
                         <div class="dropdown custom-dropdown float-end">
                             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 <!-- Add an icon or text for the dropdown button -->
-                                <img src="/img/three-dots-vertical.svg" alt="">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a id="edit-profile-button" href="javascript:void(0);" class="dropdown-item" onclick="openEditProfileModal('<%= user.name %>', '<%= user.mobile %>' , '<%= user.profile %>' ,'<%= user.bio %>' )">Edit</a>
@@ -288,7 +288,7 @@
             <div class="col-xl-7">
                 <div class="card">
                     <div class="card-body">
-                        <form action="#" class="comment-area-box mb-3">
+                        <div class="comment-area-box mb-3">
                             <span class="input-icon">
                                 <!-- <textarea rows="3" class="form-control" placeholder="Write something..."></textarea> -->
                             </span>
@@ -307,18 +307,15 @@
                                             class="far fa-smile"></i></a> -->
                                 </div>
                             </div>
-                        </form>
+                        </div>
 
-                        <div class="container bg-light">
-                            <div class="row d-flex justify-content-center  pb-0">
-                                <div class="row">
-                                    <div class="col-12 py-vh-2"></div>
-                                </div>
+                        <div class="container bg-dark">
+                            <div class="row d-flex justify-content-center  pt-3" data-pitch-container>
 
-                                <div class="col-12 col-lg-10 col-xl-8">
+                                <div class="col-12 col-lg-10 col-xl-10 container-post mb-3">
                                     <div class="row d-flex align-items-start" data-aos="fade-right">
                                         <div class="col-12 col-lg-10">
-                                            <h2 class="h3 ">
+                                            <h2 class="h3 mt-3">
                                                 this is new tittle
                                             </h2>
                                             <p class="text-secondary">
@@ -330,14 +327,14 @@
                                             </p>
                                             <div class="user-info d-flex align-items-center mb-3"
                                                 style="font-size: 14px">
-                                                <a href="#" class="me-2">
+                                                <!-- <a href="#" class="me-2">
                                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                                         class="rounded-circle" alt="User Avatar" height="25" />
-                                                </a>
+                                                </a> -->
                                                 <div>
-                                                    <h4 class="h6 mb-0 text-muted" style="font-size: 16px">
+                                                    <!-- <h4 class="h6 mb-0 text-muted" style="font-size: 16px">
                                                         rishal
-                                                    </h4>
+                                                    </h4> -->
                                                     <span class="ms-2 text-muted post-date">Posted on 97979</span>
                                                 </div>
                                             </div>
@@ -345,23 +342,23 @@
                                         <div class="d-flex align-items-center justify-content-between"
                                             style="width: 100%">
                                             <div class="d-flex align-items-center">
-                                                <div class="mr-3">
-                                                    <i class="fa-thumbs-up pointer"></i>
+                                                <div >
+                                                    <i class="fa-solid fa-thumbs-up"></i>
                                                     <span class="ml-2" style="font-size: 14px">Upvote</span>
                                                 </div>
-                                                <div class="mr-3">
+                                                <div >
                                                     <i class="fa-regular fa-comment pointer"
                                                         style="margin-left: 20px"></i>
                                                     <span class="ml-2" style="font-size: 14px">Comment</span>
                                                 </div>
                                             </div>
-                                            <div class="mr-3" style="margin-left: 100px">
-                                                <i class=" fa-handshake pointer"></i>
+                                            <div class="" style="margin-left: 100px">
+                                                <i class="fa-solid fa-handshake"></i>
                                                 <span class="ml-2" style="font-size: 14px">Interested</span>
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide">
+                                        <!-- <div class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide">
                                             <div class="existing-comments mt-4">
                                                 <div class="comment d-flex align-items-start">
                                                     <a href="#" class="me-2">
@@ -399,9 +396,99 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
+
+                                <div class="col-12 col-lg-10 col-xl-10 container-post">
+                                    <div class="row d-flex align-items-start" data-aos="fade-right">
+                                        <div class="col-12 col-lg-10">
+                                            <h2 class="h3 mt-3">
+                                                this is new tittle
+                                            </h2>
+                                            <p class="text-secondary">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum et
+                                                cumque quidem sunt
+                                                eum corrupti est dicta laborum, repudiandae suscipit laudantium
+                                                officia, tempora
+                                                harum adipisci magni quasi. Possimus, repellat animi!
+                                            </p>
+                                            <div class="user-info d-flex align-items-center mb-3"
+                                                style="font-size: 14px">
+                                                <!-- <a href="#" class="me-2">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                        class="rounded-circle" alt="User Avatar" height="25" />
+                                                </a> -->
+                                                <div>
+                                                    <!-- <h4 class="h6 mb-0 text-muted" style="font-size: 16px">
+                                                        rishal
+                                                    </h4> -->
+                                                    <span class="ms-2 text-muted post-date">Posted on 97979</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between"
+                                            style="width: 100%">
+                                            <div class="d-flex align-items-center">
+                                                <div >
+                                                    <i class="fa-solid fa-thumbs-up"></i>
+                                                    <span class="ml-2" style="font-size: 14px">Upvote</span>
+                                                </div>
+                                                <div >
+                                                    <i class="fa-regular fa-comment pointer"
+                                                        style="margin-left: 20px"></i>
+                                                    <span class="ml-2" style="font-size: 14px">Comment</span>
+                                                </div>
+                                            </div>
+                                            <div class="" style="margin-left: 100px">
+                                                <i class="fa-solid fa-handshake"></i>
+                                                <span class="ml-2" style="font-size: 14px">Interested</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide">
+                                            <div class="existing-comments mt-4">
+                                                <div class="comment d-flex align-items-start">
+                                                    <a href="#" class="me-2">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                            class="rounded-circle" alt="Generic placeholder image"
+                                                            height="31" />
+                                                    </a>
+                                                    <div>
+                                                        <h4 class="h6 mb-0 comment-user">
+                                                            sabith
+                                                        </h4>
+                                                        <p>
+                                                            dljxljdsjdjlsajldjasjdjasldjlasjdlasjd
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <form class="comment-form mt-4 comment-div">
+                                                <div class="d-flex align-items-start mt-2">
+                                                    <a class="pe-2" href="#">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                                                            class="rounded-circle" alt="Generic placeholder image"
+                                                            height="31" />
+                                                    </a>
+                                                    <div class="w-100" style="margin-left: 10px">
+                                                        <input type="text" id="simpleinput"
+                                                            class="form-control border-0 form-control-sm"
+                                                            placeholder="Add comment" style="
+                                                    border-radius: 35px;
+                                                    font-size: 12px;
+                                                " />
+                                                        <button type="submit" class="btn-comment"><i
+                                                                class="fa-regular fa-paper-plane"></i></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -438,11 +525,9 @@
             }
         });
     </script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript"></script>
-    <script src="/script/uiFunctions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -451,6 +536,7 @@
     <script src="/script/toast.js"></script>
     <script src="/script/account.js"></script>
     <script src="/script/sse.js"></script>
+    <script src="/script/uiFunctions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 

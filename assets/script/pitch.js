@@ -50,7 +50,7 @@ const commentHandler = async (e) => {
 
             commentSec.children[0].appendChild(createNewComment(data));
 
-            console.log("comment added", commentSec.children);
+            commentSec.children[0].scrollTop = commentSec.children[0].scrollHeight;
         }
     } catch (error) {
         toast("error", error.message);
@@ -61,12 +61,15 @@ const createNewComment = (data) => {
     const div = document.createElement("div");
     div.setAttribute("class", "comment d-flex align-items-start");
     div.innerHTML = `<a href="#" class="me-2">
+                        <div class="comment-img-preview">
                         <img
-                            src="/images/profile/1709881053766_500087869_.jpg"
-                            class="rounded-circle"
-                            alt="Generic placeholder image"
-                            height="31"
-                        />
+                        src="${data.user.profile}"
+                        class="rounded-circle"
+                        alt="Generic placeholder image"
+                        height="31"
+                    />
+                        </div>
+                       
                     </a>
                     <div>
                         <h4 class="h6 mb-0 comment-user">${data.user.name}</h4>

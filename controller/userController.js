@@ -116,9 +116,10 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 const showPitchPage = asyncHandler(async (req, res) => {
     const visions = await Vision.find()
-    .populate('userId')
+    .populate('userId').populate('comments.userId')
+    const user = await User.findById(req.session.userId)
 
-    res.render('user/pitch',{visions,userId:req.session.userId})
+    res.render('user/pitch',{visions,userId:req.session.userId,user})
 })
 
 
