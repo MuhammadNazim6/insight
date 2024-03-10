@@ -281,7 +281,7 @@
                                             <%= vision.title %>
                                         </div>
                                         <div class="chat-members">
-                                            dsfdss sdfds dfds
+                                            <%= vision.interested.reduce((acc,value)=>acc+value.userId.name +", ","") %>
                                         </div>
                                     </div>
                                     <%})%>
@@ -296,11 +296,9 @@
                                             ></i>
                                         </button>
                                         <div class="chatind-titlebar">
-                                            <div class="chat-title">
-                                                fhdskjh dsjfhkjds dsjsfhds
+                                            <div class="chat-title" chat-title-chat>
                                             </div>
-                                            <div class="chat-members">
-                                                dsfdss sdfds dfds
+                                            <div class="chat-members" chat-member-chat>
                                             </div>
                                         </div>
                                     </div>

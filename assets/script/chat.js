@@ -17,6 +17,7 @@ const handleMessages = (messageDetails,type) => {
     const chatHistory = document.querySelector(`[data-chat-history]`);
     const comment = createChatElement(messageDetails, type);
     chatHistory?.appendChild(comment);
+    chatHistory.scrollTop =chatHistory.scrollHeight
 };
 
 const createChatElement = (messageDetails, type) => {
@@ -40,11 +41,20 @@ const showChatDiv = ()=>{
 }
 const showIndividualChat = async (id)=>{
     visionId = id
+
+
     document.querySelector(`[data-homescreen]`).classList.add('hide')
     document.querySelector(`[data-individual]`).classList.remove('hide')
     const history = document.querySelector(`[data-chat-history]`)
     const data = await fetchData("GET",`/get-message/${id}`)
     if(data.status=="success"){
+        const vision = data?.vision
+        if(vision){
+            const members = vision.interested.reduce((acc,value)=>acc+value.userId.name +", ","")
+            document.querySelector(`[chat-title-chat]`).textContent=vision.title
+
+            document.querySelector(`[chat-member-chat]`).textContent = members
+        }
         data?.messages?.forEach(element => {
             const date = new Date(element.sendAt)
             const div  = document.createElement('div')

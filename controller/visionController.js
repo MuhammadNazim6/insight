@@ -15,6 +15,7 @@ const createVision = asyncHandler(async (req, res) => {
         userId,
         title,
         content,
+        interested:[{userId}]
     });
     if (newVision) {
         res.status(200).json({
@@ -272,8 +273,9 @@ const sendMessage = asyncHandler(async (req,res)=>{
 })
 const getMessages = asyncHandler(async(req,res)=>{
     const {visionId} = req.params
+    const vision = await Vision.findById(visionId).populate('interested.userId')
     const {messages} = await Chat.findOne({visionId}).populate('messages.userId') ||{}
-    res.status(200).json({status:"success",messages,userId:req.session.userId})
+    res.status(200).json({status:"success",messages,userId:req.session.userId,vision})
 })
 
 module.exports = {

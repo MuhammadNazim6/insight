@@ -7,7 +7,7 @@ eventSource.onmessage = (event) => {
 
     if(data.type == "message"){
         handleMessages(data.messageDetails,"left")
-        toast("success",data.message+" from chat")
+        toast("success",`You have a new message from ${messageDetails.name}`)
     }
 };
 

@@ -129,7 +129,7 @@ const showAccountPage = asyncHandler(async (req, res) => {
     .populate('interested.userId')
     .exec()
 
-    const myInterestedVisions = await Vision.find({'interested.userId': req.session.userId })
+    const myInterestedVisions = await Vision.find({'interested.userId': req.session.userId }).populate('interested.userId')
     .populate('userId')
 
 
