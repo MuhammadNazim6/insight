@@ -82,6 +82,7 @@ const showIndividualChat = async (id) => {
                             </div>
             `;
             history.appendChild(div);
+            history.scrollTop = history.scrollHeight;
         });
     }
 };
