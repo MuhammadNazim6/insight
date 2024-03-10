@@ -4,6 +4,10 @@ eventSource.onmessage = (event) => {
     if (data.type == "notification") {
         toast("success",data.message)
     }
+
+    if(data.type == "message"){
+        handleIncomingMessage(data.messageDetails)
+    }
 };
 
 eventSource.onerror = (error) => {
