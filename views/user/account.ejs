@@ -108,44 +108,75 @@
 
 
                 </div>
+
+
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title mb-3">Interested Members <i class="mdi mdi-account-multiple ms-1"></i>
-                        </h4>
+                        <h5 class="header-title mb-3 d-flex justify-content-between">
+                            <div>
+                                <span>Interested Members </span>
+                            <i class="mdi mdi-account-multiple ms-1" style="vertical-align: middle;"></i>  
+                            </div>
+                           <div>
+                            <i style="font-size: large; cursor: pointer; color: #ffffff;" class="fa-solid fa-list mr-2"></i>
+                            <i style="font-size: large; vertical-align: bottom; cursor: pointer;" class="fa-regular fa-comments" ></i> 
+                           </div>
+                        </h5>
                         <div class="list-group">
 
-                            <div class="scrollable-list">
+                            <div class="simplebar-content scrollable-list" style="padding: 0px;">
                                 <% for (let i=0; i < visions?.length; i++) { %>
                                     <% for (let j=0; j < visions[i]?.interested.length; j++) { %>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                                    class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                    alt>
-                                                <div>
-                                                    <h6 class="mb-1 font-11">
-                                                        <%= visions[i].interested[j].userId.name %>
-                                                            </h5>
-                                                            <h5 class="mb-0 font-13 text-muted">
-                                                                <%= visions[i].title %>
-                                                            </h5>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <% } %>
-                                            <% } %>
-                            </div>
+                                
+                                    <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                        <div class="chat-pfp-container">
+                                        <img src="  <%= visions[i].interested[j].userId.profile %>"
+                                        alt>
+                                        </div>
+                                        <div class="w-100 ms-3">
+                                            <h6 class="mb-1"><%= visions[i].interested[j].userId.name %></h6>
+                                            <p class="mb-0 font-13"> <%= visions[i].title %></p>
+                                        </div>
+                                        <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
+                                            data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
+                                            data-bs-placement="left" title data-bs-original-title="Reply">
+                                            <i class="mdi mdi-reply"></i> </a>
+                                    </div>
+                                <%  } } %>
 
+                                </div>
 
+                                <!-- My interested visions  -->
 
+                                <h5 class="header-title mt-5 mb-3">My interested visions <i class="fa-regular fa-lightbulb"></i></h5>
+                                <div class="simplebar-content scrollable-list" style="padding: 0px;">
+                                <% for (let i=0; i < myInterestedVisions?.length; i++) { %>
+                                
+                                    <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                        <div class="chat-pfp-container">
+                                            <img src=" <%= myInterestedVisions[i].userId.profile %>"
+                                            alt>
+                                        </div>
+                                        <div class="w-100 ms-3">
+                                            <h6 class="mb-1"><%= myInterestedVisions[i].title %></h6>
+                                            <p class="mb-0 font-13"><%= myInterestedVisions[i].userId.name %></p>
+                                        </div>
+                                        <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
+                                            data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
+                                            data-bs-placement="left" title data-bs-original-title="Reply">
+                                            <i class="mdi mdi-reply"></i> </a>
+                                    </div>
+                                <%  } %>
+
+                                </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title mb-3">Inbox</h4>
+                        <h4 class="header-title mb-4">My interested visions <i class="fa-regular fa-lightbulb"></i></h4>
                         <div class="inbox-widget" data-simplebar="init" style="max-height: 350px;">
                             <div class="simplebar-wrapper" style="margin: 0px;">
                                 <div class="simplebar-height-auto-observer-wrapper">
@@ -155,118 +186,27 @@
                                     <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
                                         <div class="simplebar-content-wrapper"
                                             style="height: auto; overflow: hidden scroll;">
-                                            <div class="simplebar-content" style="padding: 0px;">
+
+                                            <div class="simplebar-content scrollable-list" style="padding: 0px;">
+
+                                            <% for(let i = 0 ; i < myInterestedVisions.length ; i++){  %>
+                                            
                                                 <div class="d-flex align-items-center pb-1" id="tooltips-container">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
+                                                    <img src=" <%= myInterestedVisions[i].userId.profile %>"
+                                                    class="rounded-circle img-fluid avatar-md bg-transparent"
+                                                    alt>
                                                     <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Tomaslau</h5>
-                                                        <p class="mb-0 font-13">I've finished it! See you so...</p>
+                                                        <h6 class="mb-1"><%= myInterestedVisions[i].title %></h6>
+                                                        <p class="mb-0 font-13"><%= myInterestedVisions[i].userId.name %></p>
                                                     </div>
                                                     <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
                                                         data-bs-container="#tooltips-container" data-bs-toggle="tooltip"
                                                         data-bs-placement="left" title data-bs-original-title="Reply">
                                                         <i class="mdi mdi-reply"></i> </a>
                                                 </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container1">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Stillnotdavid</h5>
-                                                        <p class="mb-0 font-13">This theme is awesome!</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container1"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container2">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Shahedk</h5>
-                                                        <p class="mb-0 font-13">Hey! there I'm available...</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container2"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container3">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Kurafire</h5>
-                                                        <p class="mb-0 font-13">Nice to meet you</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container3"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container4">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Adhamdannaway</h5>
-                                                        <p class="mb-0 font-13">This theme is awesome!</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container4"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container5">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Tomaslau</h5>
-                                                        <p class="mb-0 font-13">I've finished it! See you so...</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container5"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center py-1" id="tooltips-container6">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Shahedk</h5>
-                                                        <p class="mb-0 font-13">Hey! there I'm available...</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container6"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="d-flex align-items-center pt-1" id="tooltips-container7">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                                        class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent"
-                                                        alt>
-                                                    <div class="w-100 ms-3">
-                                                        <h5 class="mb-1">Stillnotdavid</h5>
-                                                        <p class="mb-0 font-13">This theme is awesome!</p>
-                                                    </div>
-                                                    <a href="javascript:(0);" class="btn btn-sm btn-soft-info font-13"
-                                                        data-bs-container="#tooltips-container7"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left" title
-                                                        data-bs-original-title="Reply"> <i class="mdi mdi-reply"></i>
-                                                    </a>
-                                                </div>
+
+                                            <%  }  %>
+
                                             </div>
                                         </div>
                                     </div>
@@ -282,7 +222,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
 
             </div>
             <div class="col-xl-7">
@@ -312,181 +253,42 @@
                         <div class="container bg-dark">
                             <div class="row d-flex justify-content-center  pt-3" data-pitch-container>
 
-                                <div class="col-12 col-lg-10 col-xl-10 container-post mb-3">
+                                <% for(let i = 0 ; i < visions.length ; i++){ %>
+                                <div class="col-12 col-lg-10 col-xl-10 container-post mb-3 pb-4">
                                     <div class="row d-flex align-items-start" data-aos="fade-right">
                                         <div class="col-12 col-lg-10">
                                             <h2 class="h3 mt-3">
-                                                this is new tittle
+                                               <%=  visions[i].title %>
                                             </h2>
                                             <p class="text-secondary">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum et
-                                                cumque quidem sunt
-                                                eum corrupti est dicta laborum, repudiandae suscipit laudantium
-                                                officia, tempora
-                                                harum adipisci magni quasi. Possimus, repellat animi!
+                                                <%=  visions[i].content %>
                                             </p>
                                             <div class="user-info d-flex align-items-center mb-3"
                                                 style="font-size: 14px">
-                                                <!-- <a href="#" class="me-2">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                                        class="rounded-circle" alt="User Avatar" height="25" />
-                                                </a> -->
                                                 <div>
-                                                    <!-- <h4 class="h6 mb-0 text-muted" style="font-size: 16px">
-                                                        rishal
-                                                    </h4> -->
-                                                    <span class="ms-2 text-muted post-date">Posted on 97979</span>
+                                                    <span class="ms-2 text-muted post-date"> <%=  visions[i].createdAt.toLocaleDateString() %></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between"
                                             style="width: 100%">
                                             <div class="d-flex align-items-center">
-                                                <div >
-                                                    <i class="fa-solid fa-thumbs-up"></i>
-                                                    <span class="ml-2" style="font-size: 14px">Upvote</span>
+                                                <div class="pointer">
+                                                    <span class="ml-2" style="font-size: 14px"><strong><%= visions[i].upvotes.length %> </strong > Upvotes</span>
                                                 </div>
-                                                <div >
+                                                <div class="pointer">
                                                     <i class="fa-regular fa-comment pointer"
-                                                        style="margin-left: 20px"></i>
-                                                    <span class="ml-2" style="font-size: 14px">Comment</span>
+                                                        style="margin-left: 50px"></i>
+                                                    <span class="" style="font-size: 14px">Comment</span>
                                                 </div>
                                             </div>
-                                            <div class="" style="margin-left: 100px">
-                                                <i class="fa-solid fa-handshake"></i>
-                                                <span class="ml-2" style="font-size: 14px">Interested</span>
+                                            <div class="pointer" style="margin-left: 100px">
+                                                <span class="ml-2" style="font-size: 14px"><strong><%= visions[i].interested.length %> </strong >Interested</span>
                                             </div>
                                         </div>
-
-                                        <!-- <div class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide">
-                                            <div class="existing-comments mt-4">
-                                                <div class="comment d-flex align-items-start">
-                                                    <a href="#" class="me-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                                            class="rounded-circle" alt="Generic placeholder image"
-                                                            height="31" />
-                                                    </a>
-                                                    <div>
-                                                        <h4 class="h6 mb-0 comment-user">
-                                                            sabith
-                                                        </h4>
-                                                        <p>
-                                                            dljxljdsjdjlsajldjasjdjasldjlasjdlasjd
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <form class="comment-form mt-4 comment-div">
-                                                <div class="d-flex align-items-start mt-2">
-                                                    <a class="pe-2" href="#">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                                            class="rounded-circle" alt="Generic placeholder image"
-                                                            height="31" />
-                                                    </a>
-                                                    <div class="w-100" style="margin-left: 10px">
-                                                        <input type="text" id="simpleinput"
-                                                            class="form-control border-0 form-control-sm"
-                                                            placeholder="Add comment" style="
-                                                    border-radius: 35px;
-                                                    font-size: 12px;
-                                                " />
-                                                        <button type="submit" class="btn-comment"><i
-                                                                class="fa-regular fa-paper-plane"></i></button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div> -->
                                     </div>
                                 </div>
-
-                                <div class="col-12 col-lg-10 col-xl-10 container-post">
-                                    <div class="row d-flex align-items-start" data-aos="fade-right">
-                                        <div class="col-12 col-lg-10">
-                                            <h2 class="h3 mt-3">
-                                                this is new tittle
-                                            </h2>
-                                            <p class="text-secondary">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum et
-                                                cumque quidem sunt
-                                                eum corrupti est dicta laborum, repudiandae suscipit laudantium
-                                                officia, tempora
-                                                harum adipisci magni quasi. Possimus, repellat animi!
-                                            </p>
-                                            <div class="user-info d-flex align-items-center mb-3"
-                                                style="font-size: 14px">
-                                                <!-- <a href="#" class="me-2">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                                        class="rounded-circle" alt="User Avatar" height="25" />
-                                                </a> -->
-                                                <div>
-                                                    <!-- <h4 class="h6 mb-0 text-muted" style="font-size: 16px">
-                                                        rishal
-                                                    </h4> -->
-                                                    <span class="ms-2 text-muted post-date">Posted on 97979</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between"
-                                            style="width: 100%">
-                                            <div class="d-flex align-items-center">
-                                                <div >
-                                                    <i class="fa-solid fa-thumbs-up"></i>
-                                                    <span class="ml-2" style="font-size: 14px">Upvote</span>
-                                                </div>
-                                                <div >
-                                                    <i class="fa-regular fa-comment pointer"
-                                                        style="margin-left: 20px"></i>
-                                                    <span class="ml-2" style="font-size: 14px">Comment</span>
-                                                </div>
-                                            </div>
-                                            <div class="" style="margin-left: 100px">
-                                                <i class="fa-solid fa-handshake"></i>
-                                                <span class="ml-2" style="font-size: 14px">Interested</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- <div class="col-12 col-lg-12 bg-gray-900 mt-5 comment-section hide">
-                                            <div class="existing-comments mt-4">
-                                                <div class="comment d-flex align-items-start">
-                                                    <a href="#" class="me-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                                            class="rounded-circle" alt="Generic placeholder image"
-                                                            height="31" />
-                                                    </a>
-                                                    <div>
-                                                        <h4 class="h6 mb-0 comment-user">
-                                                            sabith
-                                                        </h4>
-                                                        <p>
-                                                            dljxljdsjdjlsajldjasjdjasldjlasjdlasjd
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <form class="comment-form mt-4 comment-div">
-                                                <div class="d-flex align-items-start mt-2">
-                                                    <a class="pe-2" href="#">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                                            class="rounded-circle" alt="Generic placeholder image"
-                                                            height="31" />
-                                                    </a>
-                                                    <div class="w-100" style="margin-left: 10px">
-                                                        <input type="text" id="simpleinput"
-                                                            class="form-control border-0 form-control-sm"
-                                                            placeholder="Add comment" style="
-                                                    border-radius: 35px;
-                                                    font-size: 12px;
-                                                " />
-                                                        <button type="submit" class="btn-comment"><i
-                                                                class="fa-regular fa-paper-plane"></i></button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div> -->
-                                    </div>
-                                </div>
+                            <% } %>
 
 
                             </div>
