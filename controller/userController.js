@@ -116,20 +116,23 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 const showPitchPage = asyncHandler(async (req, res) => {
     const visions = await Vision.find()
-    .populate('userId').populate('comments.userId')
+    .populate('userId').populate('comments.userId').sort({_id:-1})
     const user = await User.findById(req.session.userId)
 
     res.render('user/pitch',{visions,userId:req.session.userId,user})
-})
+}) 
 
 
 const showAccountPage = asyncHandler(async (req, res) => {
     const user = await User.findOne({_id:req.session.userId})
-    const visions = await Vision.find({userId:req.session.userId})
+    const visions = await Vision.find({userId:req.session.userId}).sort({_id:-1})
     .populate('interested.userId')
     .exec()
 
-    res.render('user/account',{user , visions })
+    const myInterestedVisions = await Vision.find({'interested.userId': req.session.userId })
+    .populate('userId')
+        
+    res.render('user/account',{user , visions , myInterestedVisions })
 })
 
 
