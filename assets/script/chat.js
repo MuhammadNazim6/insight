@@ -5,6 +5,7 @@ const sendChat=async(e)=>{
         e.preventDefault();
         const message = e.target.elements.chat.value
         const data = await fetchData("POST","/send-message",{message,visionId})
+        e.target.elements.chat.value = ""
         handleMessages(data.messageDetails,"right");
 
     } catch (error) {

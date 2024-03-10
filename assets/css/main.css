@@ -1,5 +1,7 @@
 /* utils */
-
+*{
+    scroll-behavior: smooth;
+}
 .pointer {
     cursor: pointer;
 }
@@ -104,4 +106,8 @@
 }
 .red{
     background-color: red !important;
+}
+.chat-input{
+    border-radius: 15px;
+    border: none;
 }
