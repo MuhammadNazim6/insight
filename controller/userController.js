@@ -128,8 +128,6 @@ const showAccountPage = asyncHandler(async (req, res) => {
     .populate('interested.userId')
     .exec()
 
-    console.log(visions);
-    console.log(user);
     res.render('user/account',{user , visions })
 })
 

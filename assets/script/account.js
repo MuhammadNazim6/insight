@@ -77,6 +77,7 @@ const handleProfileEdit = async (profile, name, mobile, bio) => {
         const data = await fetchData("PUT", "/profile", formData, "multipart");
         if (data.status === "success") {
             toast("success", data.message);
+            document.getElementById('namePara').textContent = data.userData.name
             document.getElementById('bioPara').textContent = data.userData.bio
             document.getElementById('mobilePara').textContent = data.userData.mobile
             document.getElementById('profileImg').src = data.userData.profile
