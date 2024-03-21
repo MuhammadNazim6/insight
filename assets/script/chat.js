@@ -62,6 +62,7 @@ const showIndividualChat = async (id) => {
 
             document.querySelector(`[chat-member-chat]`).textContent = members;
         }
+        history.innerHTML = "";
         data?.messages?.forEach((element) => {
             const date = new Date(element.sendAt);
             const div = document.createElement("div");
@@ -77,7 +78,7 @@ const showIndividualChat = async (id) => {
                                 ><span>${
                                     date.toLocaleDateString() +
                                     " " +
-                                    date.toLocaleDateString()
+                                    date.toLocaleTimeString('en-US')
                                 }</span>
                             </div>
             `;

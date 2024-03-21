@@ -72,37 +72,33 @@ const addVisionToDOM = (vision) => {
 
     const div = document.createElement("div");
     div.setAttribute("class", "col-12 col-lg-10 col-xl-10 container-post mb-3");
-    div.innerHTML = `<div class="row d-flex align-items-start" data-aos="fade-right">
-                        <div class="col-12 col-lg-10">
-                            <h2 class="h3 mt-3">
-                                ${vision.title}
-                            </h2>
-                            <p class="text-secondary">
-                                ${vision.content}
-                            </p>
-                            <div class="user-info d-flex align-items-center mb-3"
-                                style="font-size: 14px">
-                                <div>
-                                    <span class="ms-2 text-muted post-date">Posted on ${formattedDate}</span>
+    div.innerHTML = `<div class="col-12 col-lg-10 col-xl-10 container-post mb-3 pb-4">
+                        <div class="row d-flex align-items-start" data-aos="fade-right">
+                            <div class="col-12 col-lg-10">
+                                <h2 class="h3 mt-3">${vision.title}</h2>
+                                <p class="text-secondary">${vision.content}</p>
+                                <div class="user-info d-flex align-items-center mb-3" style="font-size: 14px">
+                                    <div>
+                                        <span class="ms-2 text-muted post-date">${formattedDate}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between"
-                            style="width: 100%">
-                            <div class="d-flex align-items-center">
-                                <div >
-                                    <i class="fa-regular fa-thumbs-up"></i>
-                                    <span class="ml-2" style="font-size: 14px">Upvote</span>
+                            <div class="d-flex align-items-center justify-content-between" style="width: 100%">
+                                <div class="d-flex align-items-center">
+                                    <div class="pointer">
+                                        <span class="ml-2" style="font-size: 14px">
+                                            <strong>0</strong>Upvotes
+                                        </span>
+                                    </div>
+                                    <div class="pointer">
+                                        <i class="fa-regular fa-comment pointer" style="margin-left: 50px;"></i>
+                                        <span class="" style="font-size: 14px;">Comment</span>
+                                    </div>
                                 </div>
-                                <div >
-                                    <i class="fa-regular fa-comment pointer"
-                                        style="margin-left: 20px"></i>
-                                    <span class="ml-2" style="font-size: 14px">Comment</span>
+                                <div class="pointer" style="margin-left: 100px">
+                                    <span class="ml-2" style="font-size: 14px">
+                                        <strong>1</strong>Interested</span>
                                 </div>
-                            </div>
-                            <div class="" style="margin-left: 100px">
-                                <i class="fa-regular fa-handshake"></i>
-                                <span class="ml-2" style="font-size: 14px">Interested</span>
                             </div>
                         </div>
                     </div>`;
