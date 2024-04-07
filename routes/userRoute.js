@@ -14,7 +14,7 @@ userRoute.get('/account',isLogin,userController.showAccountPage)
 
 userRoute.get('/login',isLogout,userController.showLogin)
 userRoute.post('/login', userController.loginUser)
-userRoute.post('/logout',auth, userController.logoutUser)
+userRoute.get('/logout',auth, userController.logoutUser)
 userRoute.post('/create-vision',auth, visionController.createVision)
 userRoute.patch('/upvote',auth, visionController.upvoteVision)
 userRoute.patch('/interest',auth, visionController.interestInVision)

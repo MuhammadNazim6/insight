@@ -57,7 +57,6 @@ const loginUser = asyncHandler(async (req, res) => {
     if (user) {
         if (await bcrypt.compare(password, user.password)) {
             req.session.userId = user._id
-            console.log(user.name, 'Logged in')
             res.json({ status: "success", message: 'User login successfull' })
         } else {
             res.status(401)
@@ -110,7 +109,7 @@ const updateProfile = asyncHandler(async (req, res) => {
 const logoutUser = asyncHandler(async (req, res) => {
     req.session.destroy();
 
-    res.json({status:'success', message: "User logged out" });
+    res.render('user/login')
 }); 
   
 
