@@ -183,6 +183,7 @@ const addComment = asyncHandler(async (req, res) => {
                 comment: comment,
                 updatedAt: new Date(),
                 user,
+                count:vision.comments.count
             });
         } else {
             throw new Error("Failed to add comment");

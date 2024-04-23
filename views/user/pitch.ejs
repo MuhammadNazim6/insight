@@ -195,15 +195,16 @@
                                 <div class="d-flex align-items-center">
                                     <div class="mr-3">
                                         <i
-                                            class="<%= visions[i].upvotes.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-thumbs-up pointer"
-                                            data-upvote
-                                            data-vision-id="<%= visions[i]._id%>"
+                                        class="<%= visions[i].upvotes.some(user=>user.userId==userId)?`fa-solid`:`fa-regular` %> fa-thumbs-up pointer"
+                                        data-upvote
+                                        data-vision-id="<%= visions[i]._id%>"
                                         ></i>
                                         <span
-                                            class="ml-2"
-                                            style="font-size: 14px"
-                                            >Upvote</span
+                                        class="ml-2 "
+                                        style="font-size: 14px"
+                                        ><%= visions[i].upvotes.length %> upvotes</span
                                         >
+                                    
                                     </div>
                                     <div class="mr-3">
                                         <i

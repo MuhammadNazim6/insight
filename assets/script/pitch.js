@@ -5,6 +5,8 @@ const controlUpvote = async (e) => {
         if ((data.status = "success")) {
             e.target.classList.toggle("fa-regular");
             e.target.classList.toggle("fa-solid");
+            const update = data.count == 1 ? '1 upvote' : data.count + ' upvotes' 
+            e.target.nextElementSibling.textContent = update
         }
     } catch (error) {
         toast("error", error.message);
