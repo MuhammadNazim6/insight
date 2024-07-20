@@ -6,10 +6,13 @@ const nocache = require("nocache");
 const path = require("path");
 const userRoute = require("./routes/userRoute");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware")
+const cron = require('node-cron');
+const axios = require('axios')
+const SERVER = 'https://insight-a7oc.onrender.com'
 
 const app = express();
 dotenv.config({ path: ".env" });
-mongoose.connect(process.env.MONGO_DB + "insight");
+mongoose.connect(process.env.MONGO_DB);
 const PORT = process.env.PORT || 8080;
 
 app.set("view engine", "ejs");
@@ -43,3 +46,14 @@ app.use(errorHandler);
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)
 );
+
+cron.schedule("*/10 * * * *", () => {
+  axios
+      .get(SERVER)
+      .then((response) => {
+          console.log(`Request sent successfully at ${new Date()}`);
+      })
+      .catch((error) => {
+          console.error(`Error sending request: ${error.message}`);
+      });
+});
